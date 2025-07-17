@@ -1,0 +1,94 @@
+/* PracticeQuestions.css */
+
+/* Ensure the page fills the screen and removes overflow */
+.practice-questions {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background-color: #f5f7fa;
+  overflow-x: hidden;
+}
+
+/* Main content box */
+.practice-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header and description */
+.practice-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.practice-description {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Question navigation */
+.question-navigation h3 {
+  margin-bottom: 1rem;
+}
+
+.question-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.question-nav-btn {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.question-nav-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.question-nav-btn.completed {
+  border-color: green;
+}
+
+/* Question section */
+.question-section {
+  margin-top: 2rem;
+}
+
+/* Navigation buttons */
+.navigation-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}

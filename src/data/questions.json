@@ -1,0 +1,382 @@
+[
+  {
+    "id": 1,
+    "question": "What is the output of the following code?\n\nx = 5\ny = 2\nprint(x // y)",
+    "options": ["2.5", "2", "3", "2.0"],
+    "correctAnswers": [1],
+    "explanation": "The // operator performs floor division, which returns the largest integer less than or equal to the division result. 5 // 2 = 2.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 2,
+    "question": "Which of the following are valid Python variable names? (Select all that apply)",
+    "options": ["_variable", "2variable", "variable_2", "variable-2"],
+    "correctAnswers": [0, 2],
+    "explanation": "Valid Python variable names can start with a letter or underscore, followed by letters, digits, or underscores. They cannot start with a digit or contain hyphens.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 3,
+    "question": "What is the result of the following expression?\n\nbool([])",
+    "options": ["True", "False", "None", "Error"],
+    "correctAnswers": [1],
+    "explanation": "An empty list [] is considered falsy in Python, so bool([]) returns False.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 4,
+    "question": "What will be printed by this code?\n\nfor i in range(3):\n    if i == 1:\n        continue\n    print(i)",
+    "options": ["0 1 2", "0 2", "1 2", "0 1"],
+    "correctAnswers": [1],
+    "explanation": "The continue statement skips the rest of the loop iteration when i == 1, so only 0 and 2 are printed.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 5,
+    "question": "Which loop will execute exactly 5 times?",
+    "options": ["for i in range(5):", "for i in range(1, 5):", "for i in range(0, 6):", "for i in range(1, 6):"],
+    "correctAnswers": [0],
+    "explanation": "range(5) generates numbers from 0 to 4 (5 numbers total). range(1, 5) generates 1 to 4 (4 numbers), range(0, 6) generates 0 to 5 (6 numbers), and range(1, 6) generates 1 to 5 (5 numbers), but range(5) is the most direct answer.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 6,
+    "question": "What is the output of this code?\n\nx = 10\nif x > 5:\n    if x < 15:\n        print('A')\n    else:\n        print('B')\nelse:\n    print('C')",
+    "options": ["A", "B", "C", "No output"],
+    "correctAnswers": [0],
+    "explanation": "x = 10, which is > 5, so we enter the first if block. Then x < 15 is true, so 'A' is printed.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 7,
+    "question": "What happens when you call a function without providing a required argument?",
+    "options": [
+      "The function uses None as default",
+      "A TypeError is raised",
+      "The function returns None",
+      "The argument becomes an empty string"
+    ],
+    "correctAnswers": [1],
+    "explanation": "When a required argument is missing, Python raises a TypeError indicating that the function is missing a required positional argument.",
+    "topic": "Functions"
+  },
+  {
+    "id": 8,
+    "question": "What is the output of this code?\n\ndef func(a, b=2, c=3):\n    return a + b + c\n\nprint(func(1, c=5))",
+    "options": ["6", "8", "9", "11"],
+    "correctAnswers": [1],
+    "explanation": "func(1, c=5) calls the function with a=1, b=2 (default), and c=5. The result is 1 + 2 + 5 = 8.",
+    "topic": "Functions"
+  },
+  {
+    "id": 9,
+    "question": "Which of the following statements about Python functions are true? (Select all that apply)",
+    "options": [
+      "Functions can return multiple values",
+      "Functions can have default parameters",
+      "Functions must always return a value",
+      "Functions can be assigned to variables"
+    ],
+    "correctAnswers": [0, 1, 3],
+    "explanation": "Python functions can return multiple values (as tuples), have default parameters, and be assigned to variables. They don't always need to return a value (they return None by default).",
+    "topic": "Functions"
+  },
+  {
+    "id": 10,
+    "question": "What is the output of this code?\n\nimport math\nprint(math.ceil(4.2))",
+    "options": ["4", "5", "4.0", "5.0"],
+    "correctAnswers": [1],
+    "explanation": "math.ceil() returns the smallest integer greater than or equal to the given number. math.ceil(4.2) returns 5.",
+    "topic": "Modules"
+  },
+  {
+    "id": 11,
+    "question": "Which statement correctly imports only the sqrt function from the math module?",
+    "options": ["import sqrt from math", "from math import sqrt", "import math.sqrt", "from math import sqrt as s"],
+    "correctAnswers": [1],
+    "explanation": "The correct syntax to import a specific function from a module is 'from module_name import function_name'.",
+    "topic": "Modules"
+  },
+  {
+    "id": 12,
+    "question": "What happens when you try to access a module that hasn't been imported?",
+    "options": [
+      "Python automatically imports it",
+      "A NameError is raised",
+      "The module returns None",
+      "Python creates an empty module"
+    ],
+    "correctAnswers": [1],
+    "explanation": "If you try to use a module that hasn't been imported, Python raises a NameError because the module name is not defined in the current namespace.",
+    "topic": "Modules"
+  },
+  {
+    "id": 13,
+    "question": "What is the output of this code?\n\ntry:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print('Error caught')\nelse:\n    print('No error')\nfinally:\n    print('Always executed')",
+    "options": ["Error caught\nAlways executed", "No error\nAlways executed", "Always executed", "Error caught"],
+    "correctAnswers": [0],
+    "explanation": "The division by zero raises a ZeroDivisionError, which is caught by the except block. The finally block always executes regardless of whether an exception occurred.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 14,
+    "question": "Which of the following are built-in exception types in Python? (Select all that apply)",
+    "options": ["ValueError", "IndexError", "CustomError", "TypeError"],
+    "correctAnswers": [0, 1, 3],
+    "explanation": "ValueError, IndexError, and TypeError are all built-in Python exceptions. CustomError is not a built-in exception type.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 15,
+    "question": "What is the purpose of the 'raise' statement in Python?",
+    "options": [
+      "To catch exceptions",
+      "To manually trigger an exception",
+      "To ignore exceptions",
+      "To define new exception types"
+    ],
+    "correctAnswers": [1],
+    "explanation": "The 'raise' statement is used to manually trigger or re-raise an exception in Python.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 16,
+    "question": "What is the output of this code?\n\nclass Dog:\n    def __init__(self, name):\n        self.name = name\n    \n    def bark(self):\n        return f'{self.name} says woof!'\n\nmy_dog = Dog('Rex')\nprint(my_dog.bark())",
+    "options": ["Rex says woof!", "Dog says woof!", "woof!", "Error"],
+    "correctAnswers": [0],
+    "explanation": "The Dog class is instantiated with name='Rex', and the bark method returns a formatted string using the instance's name attribute.",
+    "topic": "OOP"
+  },
+  {
+    "id": 17,
+    "question": "Which of the following statements about Python classes are true? (Select all that apply)",
+    "options": [
+      "__init__ is the constructor method",
+      "self refers to the instance of the class",
+      "Class methods must always have self as first parameter",
+      "Classes can inherit from multiple parent classes"
+    ],
+    "correctAnswers": [0, 1, 3],
+    "explanation": "__init__ is the constructor, self refers to the instance, and Python supports multiple inheritance. However, static methods and class methods don't require self as the first parameter.",
+    "topic": "OOP"
+  },
+  {
+    "id": 18,
+    "question": "What is the output of this inheritance example?\n\nclass Animal:\n    def speak(self):\n        return 'Some sound'\n\nclass Cat(Animal):\n    def speak(self):\n        return 'Meow'\n\nmy_cat = Cat()\nprint(my_cat.speak())",
+    "options": ["Some sound", "Meow", "Error", "None"],
+    "correctAnswers": [1],
+    "explanation": "The Cat class overrides the speak method from Animal, so when called on a Cat instance, it returns 'Meow'.",
+    "topic": "OOP"
+  },
+  {
+    "id": 19,
+    "question": "What does the super() function do in Python?",
+    "options": [
+      "Creates a new instance",
+      "Calls the parent class method",
+      "Deletes the current instance",
+      "Checks if a class is a subclass"
+    ],
+    "correctAnswers": [1],
+    "explanation": "The super() function is used to call methods from the parent class, allowing access to inherited methods that may have been overridden.",
+    "topic": "OOP"
+  },
+  {
+    "id": 20,
+    "question": "What is the output of this code?\n\nmy_list = [1, 2, 3]\nmy_list.append(4)\nprint(len(my_list))",
+    "options": ["3", "4", "5", "Error"],
+    "correctAnswers": [1],
+    "explanation": "The list starts with 3 elements [1, 2, 3], then append(4) adds one more element, making the total length 4.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 21,
+    "question": "Which of the following will create a dictionary in Python?",
+    "options": ["{1, 2, 3}", "{'a': 1, 'b': 2}", "[1, 2, 3]", "(1, 2, 3)"],
+    "correctAnswers": [1],
+    "explanation": "Dictionaries are created using curly braces with key-value pairs separated by colons. {1, 2, 3} creates a set, [1, 2, 3] creates a list, and (1, 2, 3) creates a tuple.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 22,
+    "question": "What is the result of this string operation?\n\ntext = 'Hello World'\nprint(text[6:11])",
+    "options": ["World", "Hello", "orld", "Worl"],
+    "correctAnswers": [0],
+    "explanation": "String slicing text[6:11] extracts characters from index 6 to 10 (11 is exclusive). In 'Hello World', index 6 starts at 'W' and goes to the end, giving 'World'.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 23,
+    "question": "What will this code print?\n\nfor i in range(2, 8, 2):\n    print(i, end=' ')",
+    "options": ["2 4 6 ", "2 4 6 8 ", "0 2 4 6 ", "2 3 4 5 6 7 "],
+    "correctAnswers": [0],
+    "explanation": "range(2, 8, 2) starts at 2, stops before 8, with step 2. This generates 2, 4, 6.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 24,
+    "question": "What is the output of this nested loop?\n\nfor i in range(2):\n    for j in range(2):\n        print(f'{i}{j}', end=' ')",
+    "options": ["00 01 10 11 ", "01 10 ", "00 11 ", "0 1 0 1 "],
+    "correctAnswers": [0],
+    "explanation": "The outer loop runs twice (i=0,1) and for each i, the inner loop runs twice (j=0,1), producing all combinations: 00, 01, 10, 11.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 25,
+    "question": "What happens with this while loop?\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1",
+    "options": ["Prints 0 1 2", "Prints 1 2 3", "Infinite loop", "Prints 0 1 2 3"],
+    "correctAnswers": [0],
+    "explanation": "The loop starts with i=0, prints i, then increments i. This continues while i < 3, so it prints 0, 1, 2 and then stops.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 26,
+    "question": "What is the output of this function?\n\ndef multiply(a, b=1):\n    return a * b\n\nresult = multiply(5)\nprint(result)",
+    "options": ["5", "1", "0", "Error"],
+    "correctAnswers": [0],
+    "explanation": "The function is called with only one argument (5), so a=5 and b uses its default value of 1. The result is 5 * 1 = 5.",
+    "topic": "Functions"
+  },
+  {
+    "id": 27,
+    "question": "What does this lambda function do?\n\nsquare = lambda x: x ** 2\nprint(square(4))",
+    "options": ["Returns 8", "Returns 16", "Returns 4", "Causes an error"],
+    "correctAnswers": [1],
+    "explanation": "The lambda function squares its input. square(4) returns 4 ** 2 = 16.",
+    "topic": "Functions"
+  },
+  {
+    "id": 28,
+    "question": "Which of the following are valid ways to define a function with variable arguments? (Select all that apply)",
+    "options": ["def func(*args):", "def func(**kwargs):", "def func(*args, **kwargs):", "def func(args*)"],
+    "correctAnswers": [0, 1, 2],
+    "explanation": "*args collects positional arguments, **kwargs collects keyword arguments, and they can be used together. The syntax 'args*' is invalid.",
+    "topic": "Functions"
+  },
+  {
+    "id": 29,
+    "question": "What is the output of this code using a module alias?\n\nimport math as m\nprint(m.pi)",
+    "options": ["3.141592653589793", "pi", "Error", "math.pi"],
+    "correctAnswers": [0],
+    "explanation": "The math module is imported with alias 'm', so m.pi accesses the pi constant from the math module, which is approximately 3.141592653589793.",
+    "topic": "Modules"
+  },
+  {
+    "id": 30,
+    "question": "What happens when you import a module multiple times in the same program?",
+    "options": [
+      "The module is loaded multiple times",
+      "Only the first import is executed",
+      "An error occurs",
+      "The module is reloaded each time"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Python caches imported modules, so subsequent imports of the same module don't reload it - only the first import actually loads and executes the module.",
+    "topic": "Modules"
+  },
+  {
+    "id": 31,
+    "question": "What is the correct way to handle multiple exception types?",
+    "options": [
+      "except ValueError, TypeError:",
+      "except (ValueError, TypeError):",
+      "except ValueError or TypeError:",
+      "except ValueError and TypeError:"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Multiple exception types should be grouped in a tuple: except (ValueError, TypeError). This catches either exception type.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 32,
+    "question": "What is the output of this exception handling code?\n\ntry:\n    result = 10 / 2\n    print('Success')\nexcept ZeroDivisionError:\n    print('Division by zero')\nelse:\n    print('No exception')\nfinally:\n    print('Cleanup')",
+    "options": [
+      "Success\nNo exception\nCleanup",
+      "Success\nCleanup",
+      "Division by zero\nCleanup",
+      "No exception\nCleanup"
+    ],
+    "correctAnswers": [0],
+    "explanation": "No exception occurs (10/2 is valid), so 'Success' prints, then the else block executes printing 'No exception', and finally the finally block prints 'Cleanup'.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 33,
+    "question": "What is the purpose of the __str__ method in a Python class?",
+    "options": [
+      "To convert the object to a string",
+      "To initialize the object",
+      "To compare two objects",
+      "To delete the object"
+    ],
+    "correctAnswers": [0],
+    "explanation": "The __str__ method defines how an object should be represented as a string when using str() or print().",
+    "topic": "OOP"
+  },
+  {
+    "id": 34,
+    "question": "What is the output of this class inheritance example?\n\nclass Vehicle:\n    def __init__(self, brand):\n        self.brand = brand\n\nclass Car(Vehicle):\n    def __init__(self, brand, model):\n        super().__init__(brand)\n        self.model = model\n\nmy_car = Car('Toyota', 'Camry')\nprint(my_car.brand)",
+    "options": ["Toyota", "Camry", "Vehicle", "Error"],
+    "correctAnswers": [0],
+    "explanation": "The Car class calls super().__init__(brand) which initializes the brand attribute in the parent Vehicle class. So my_car.brand returns 'Toyota'.",
+    "topic": "OOP"
+  },
+  {
+    "id": 35,
+    "question": "Which of the following are characteristics of Python classes? (Select all that apply)",
+    "options": ["Support encapsulation", "Support inheritance", "Support polymorphism", "Are always abstract"],
+    "correctAnswers": [0, 1, 2],
+    "explanation": "Python classes support encapsulation (data hiding), inheritance (extending classes), and polymorphism (same interface, different implementations). They are not always abstract.",
+    "topic": "OOP"
+  },
+  {
+    "id": 36,
+    "question": "What is the difference between a list and a tuple in Python?",
+    "options": [
+      "Lists are mutable, tuples are immutable",
+      "Lists are immutable, tuples are mutable",
+      "No difference",
+      "Lists are faster than tuples"
+    ],
+    "correctAnswers": [0],
+    "explanation": "The main difference is that lists are mutable (can be changed after creation) while tuples are immutable (cannot be changed after creation).",
+    "topic": "Data Types"
+  },
+  {
+    "id": 37,
+    "question": "What is the output of this dictionary operation?\n\nmy_dict = {'a': 1, 'b': 2}\nmy_dict['c'] = 3\nprint(len(my_dict))",
+    "options": ["2", "3", "4", "Error"],
+    "correctAnswers": [1],
+    "explanation": "The dictionary starts with 2 key-value pairs, then a new pair 'c': 3 is added, making the total length 3.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 38,
+    "question": "What will this list comprehension produce?\n\nresult = [x * 2 for x in range(3)]\nprint(result)",
+    "options": ["[0, 2, 4]", "[2, 4, 6]", "[0, 1, 2]", "[1, 2, 3]"],
+    "correctAnswers": [0],
+    "explanation": "range(3) produces 0, 1, 2. The list comprehension multiplies each by 2, resulting in [0, 2, 4].",
+    "topic": "Data Types"
+  },
+  {
+    "id": 39,
+    "question": "What is the output of this set operation?\n\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\nprint(set1 & set2)",
+    "options": ["{3}", "{1, 2, 3, 4, 5}", "{1, 2, 4, 5}", "set()"],
+    "correctAnswers": [0],
+    "explanation": "The & operator performs set intersection, returning elements common to both sets. Only 3 is in both set1 and set2.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 40,
+    "question": "What does this code demonstrate about Python's dynamic typing?\n\nx = 5\nprint(type(x))\nx = 'hello'\nprint(type(x))",
+    "options": [
+      "Variables can change type during runtime",
+      "This will cause an error",
+      "Both will print <class 'int'>",
+      "Both will print <class 'str'>"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Python is dynamically typed, meaning variables can be reassigned to different types during runtime. First x is an int, then it becomes a str.",
+    "topic": "Data Types"
+  }
+]

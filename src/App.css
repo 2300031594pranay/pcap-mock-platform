@@ -1,0 +1,144 @@
+/* Reset & Base Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* ✅ Prevent horizontal scroll */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white; /* ✅ fixed from #f5f6fa to white */
+  color: #2c3e50;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* App container */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden; /* ✅ Ensure no child forces horizontal scroll */
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 1rem;
+  background-color: #f5f6fa;
+  overflow-x: hidden; /* ✅ Prevent scroll within this container */
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #7f8c8d;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+/* ========== Desktop/Mobile Card Layout ========== */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  overflow-x: hidden; /* ✅ Extra protection */
+}
+
+/* Each card */
+.card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .cards-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .main-content {
+    padding: 3rem 4rem;
+  }
+}
+
+/* Scrollbar styling (vertical only) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0; /* ✅ Prevent horizontal scrollbar entirely */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdc3c7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #95a5a6;
+}

@@ -1,0 +1,158 @@
+/* Main wrapper */
+.mock-test,
+.mock-test-start {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+  background-color: #f5f7fa;
+  box-sizing: border-box;
+}
+
+/* Start Screen */
+.start-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.test-info ul {
+  text-align: left;
+  margin: 1.5rem auto;
+  max-width: 500px;
+}
+
+.start-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.8rem;
+  font-size: 1.1rem;
+}
+
+/* Test in Progress */
+.test-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.test-progress h2 {
+  margin: 0;
+}
+
+.test-progress p {
+  margin: 0.3rem 0;
+}
+
+.timer {
+  text-align: right;
+}
+
+.time-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.time-display.warning {
+  color: #d9534f;
+}
+
+/* Question Nav Grid */
+.question-navigation {
+  margin-bottom: 2rem;
+}
+
+.question-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.question-nav-btn {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.question-nav-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.question-nav-btn.completed {
+  border-color: green;
+}
+
+/* Question & Navigation */
+.question-section {
+  margin-top: 2rem;
+}
+
+.test-navigation {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .test-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .timer {
+    text-align: left;
+  }
+
+  .test-navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
