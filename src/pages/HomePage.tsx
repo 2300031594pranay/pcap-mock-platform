@@ -21,7 +21,7 @@ export default function HomePage() {
       {/* FEATURES SECTION */}
       <section className="features-section">
         <div className="container">
-          <h2>Why Use Our Platform?</h2>
+          <h2>What Makes Our Platform the Best Choice?</h2>
           <div className="features">
             <div className="feature-card">
               <h3>Real Exam Questions</h3>
