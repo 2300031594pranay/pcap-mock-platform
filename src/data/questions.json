@@ -378,5 +378,21 @@
     "correctAnswers": [0],
     "explanation": "Python is dynamically typed, meaning variables can be reassigned to different types during runtime. First x is an int, then it becomes a str.",
     "topic": "Data Types"
+  },
+   {
+    "id": 41,
+    "question": "The following expression 2 ** 3 ** 2 ** 1 is:",
+    "options": [
+      "A. invalid",
+      "B. equal to 16",
+      "C. equal to 16.0",
+      "D. equal to 512",
+      "E. equal to 64",
+      "F. equal to 128.0"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Python evaluates '**' operator from right to left. So, 2 ** 3 ** 2 ** 1 = 2 ** (3 ** (2 ** 1)) = 2 ** (3 ** 2) = 2 ** 9 = 512.",
+    "topic": "Operators"
   }
+  
 ]
