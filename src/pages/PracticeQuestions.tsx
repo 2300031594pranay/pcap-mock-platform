@@ -15,7 +15,7 @@ interface Question {
 }
 
 export default function PracticeQuestions() {
-  const [questions] = useState<Question[]>(questionsData.slice(0, 41))
+  const [questions] = useState<Question[]>(questionsData.slice(0, 46))
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set())
 
