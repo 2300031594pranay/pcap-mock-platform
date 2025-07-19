@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import QuestionCard from "../components/QuestionCard"
 import ResultPage from "../components/ResultPage"
-import questionsData from "../data/questions.json"
+import questionsData from "../data/mockquestion.json"
 import "./MockTest.css"
 
 interface Question {

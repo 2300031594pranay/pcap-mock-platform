@@ -468,6 +468,101 @@
     ],
     "explanation": "math.hypot(3,4) returns \u221a(3\u00b2 + 4\u00b2) = 5, which is the hypotenuse of the right triangle.",
     "topic": "Math Module"
+  },{
+    "id": 47,
+    "question": "What is the output of the following code?\n\nprint(''.join(['a', 'b', 'c']).upper())",
+    "options": ["abc", "ABC", "['a','b','c']", "None"],
+    "correctAnswers": [1],
+    "explanation": "The join() method merges list elements into a string, then upper() converts it to uppercase.",
+    "topic": "Strings"
+  },
+  {
+    "id": 48,
+    "question": "Which of the following correctly defines a class constructor in Python?",
+    "options": [
+      "def __start__():",
+      "def __create__(self):",
+      "def __init__(self):",
+      "def constructor(self):"
+    ],
+    "correctAnswers": [2],
+    "explanation": "The constructor method in Python classes is always __init__.",
+    "topic": "Object Oriented Programming"
+  },
+  {
+    "id": 49,
+    "question": "What will be printed?\n\nx = lambda a, b: a * b\nprint(x(3, 4))",
+    "options": ["7", "12", "1", "Error"],
+    "correctAnswers": [1],
+    "explanation": "This lambda multiplies two arguments: 3 * 4 = 12.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 50,
+    "question": "Which of the following statements is used to handle exceptions in Python?",
+    "options": ["try/except", "do/catch", "if/error", "loop/catch"],
+    "correctAnswers": [0],
+    "explanation": "Python uses try/except to catch and handle exceptions.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 51,
+    "question": "Which of the following imports a module with an alias?",
+    "options": [
+      "import math as m",
+      "module math import m",
+      "import math to m",
+      "from math as m"
+    ],
+    "correctAnswers": [0],
+    "explanation": "`import math as m` imports the module and allows access with alias `m`.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 52,
+    "question": "What will this function return?\n\ndef foo():\n    pass\n\nprint(foo())",
+    "options": ["None", "foo", "0", "Error"],
+    "correctAnswers": [0],
+    "explanation": "Functions with no return statement return `None` by default.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 53,
+    "question": "Which of these best describes a class attribute in Python?",
+    "options": [
+      "It belongs to each instance",
+      "It is shared across all instances",
+      "It is a private method",
+      "It is a global variable"
+    ],
+    "correctAnswers": [1],
+    "explanation": "A class attribute is shared across all instances of the class.",
+    "topic": "Object Oriented Programming"
+  },
+  {
+    "id": 54,
+    "question": "What does this code print?\n\ns = 'Python'\nprint(s[::-1])",
+    "options": ["nohtyP", "Python", "Error", "Reverse"],
+    "correctAnswers": [0],
+    "explanation": "s[::-1] reverses the string using slicing.",
+    "topic": "Strings"
+  },
+  {
+    "id": 55,
+    "question": "What is the result of:\n\nprint(bool(0) or bool(''))",
+    "options": ["True", "False", "None", "0"],
+    "correctAnswers": [1],
+    "explanation": "`bool(0)` and `bool('')` are both False, so False or False is False.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 56,
+    "question": "What exception does this raise?\n\nint('abc')",
+    "options": ["ValueError", "TypeError", "SyntaxError", "KeyError"],
+    "correctAnswers": [0],
+    "explanation": "Cannot convert 'abc' to integer — this raises a ValueError.",
+    "topic": "Exceptions"
   }
+  
   
 ]

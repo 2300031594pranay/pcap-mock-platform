@@ -24,7 +24,7 @@ export default function HomePage() {
           <h2>What Makes Our Platform the Best Choice?</h2>
           <div className="features">
             <div className="feature-card">
-              <h3>Real Exam Questions</h3>
+              <h3>Previous Exam Questions</h3>
               <p>Access a wide range of questions from previous PCAP exams.</p>
             </div>
             <div className="feature-card">

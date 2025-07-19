@@ -3,6 +3,7 @@
 import { useState } from "react"
 import QuestionCard from "../components/QuestionCard"
 import questionsData from "../data/questions.json"
+
 import "./PracticeQuestions.css"
 
 interface Question {
@@ -15,7 +16,7 @@ interface Question {
 }
 
 export default function PracticeQuestions() {
-  const [questions] = useState<Question[]>(questionsData.slice(0, 46))
+  const [questions] = useState<Question[]>(questionsData.slice(0, 66))
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set())
 
