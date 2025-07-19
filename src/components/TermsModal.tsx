@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import "./TermsModal.css";
 
 interface TermsModalProps {
@@ -19,7 +19,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
           <li>Questions are based on <strong className="highlight-text">publicly available dumps</strong>; if there are inaccuracies in the source, they may reflect here.</li>
           <li><strong className="highlight-text">Do not rely solely</strong> on this app to prepare for the PCAP exam.</li>
           <li>Focus on <strong className="highlight-text">learning concepts</strong>, not memorizing answers.</li>
-          <li>There's <strong className="highlight-text">no guarantee</strong> these questions will appear in the actual certification exam.</li>
+          <li>There's <strong >no guarantee</strong> these questions will appear in the actual certification exam.</li>
         </ul>
         <button className="terms-close-btn" onClick={onClose}>Close</button>
       </div>

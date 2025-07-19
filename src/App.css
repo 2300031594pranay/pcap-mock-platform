@@ -17,7 +17,7 @@ body {
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white; /* ✅ fixed from #f5f6fa to white */
+  background-color: rgba(255, 255, 255, 0.87); /* ✅ fixed from #f5f6fa to white */
   color: #2c3e50;
   line-height: 1.6;
   font-size: 15px;
