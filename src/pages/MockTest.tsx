@@ -195,7 +195,7 @@ export default function MockTest() {
             </button>
 
             <button className="btn btn-danger submit-btn" onClick={submitTest}>
-              Submit Test
+              Finish Test
             </button>
 
             <button
