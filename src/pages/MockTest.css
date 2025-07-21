@@ -90,6 +90,7 @@
   cursor: pointer;
   border-radius: 4px;
   font-weight: bold;
+  color: #333333;
 }
 
 .question-nav-btn.active {

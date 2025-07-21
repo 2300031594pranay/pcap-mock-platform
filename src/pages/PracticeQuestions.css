@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding: 2rem 1rem;
   box-sizing: border-box;
-  background-color: #f5f7fa;
+  background-color: #f5f9fa;
   overflow-x: hidden;
 }
 
@@ -42,20 +42,22 @@
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 2rem;
+  background-color: #f0efe7;
 }
 
 .question-nav-btn {
   padding: 10px 14px;
-  border: 1px solid #ccc;
-  background-color: #f3f3f3;
+  border: 1px solid #cccccc;
+  background-color: #1945c8;
   cursor: pointer;
   border-radius: 4px;
   font-weight: bold;
+  color: #333333;
 }
 
 .question-nav-btn.active {
   background-color: #007bff;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .question-nav-btn.completed {
