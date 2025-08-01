@@ -28,10 +28,26 @@ export default function MockTest() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([])
   const [timeLeft, setTimeLeft] = useState(65 * 60) // 65 minutes in seconds
+  const [isPaused, setIsPaused] = useState(false)
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set())
 
+  // Load saved progress
   useEffect(() => {
-    if (testStarted && !testCompleted && timeLeft > 0) {
+    const saved = localStorage.getItem("pcap-progress")
+    if (saved) {
+      const data = JSON.parse(saved)
+      setQuestions(data.questions)
+      setUserAnswers(data.userAnswers)
+      setTimeLeft(data.timeLeft)
+      setCurrentQuestionIndex(data.currentQuestionIndex)
+      setAnsweredQuestions(new Set(data.answeredQuestions))
+      setTestStarted(true)
+    }
+  }, [])
+
+  // Timer logic
+  useEffect(() => {
+    if (testStarted && !testCompleted && timeLeft > 0 && !isPaused) {
       const timer = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev <= 1) {
@@ -41,21 +57,37 @@ export default function MockTest() {
           return prev - 1
         })
       }, 1000)
-
       return () => clearInterval(timer)
     }
-  }, [testStarted, testCompleted, timeLeft])
+  }, [testStarted, testCompleted, timeLeft, isPaused])
+
+  // Save progress to localStorage
+  useEffect(() => {
+    if (testStarted && !testCompleted) {
+      localStorage.setItem(
+        "pcap-progress",
+        JSON.stringify({
+          questions,
+          userAnswers,
+          timeLeft,
+          currentQuestionIndex,
+          answeredQuestions: Array.from(answeredQuestions),
+        })
+      )
+    }
+  }, [questions, userAnswers, timeLeft, currentQuestionIndex, answeredQuestions, testStarted, testCompleted])
 
   const startTest = () => {
-    // Randomly select 40 questions
     const shuffled = [...questionsData].sort(() => 0.5 - Math.random())
-    setQuestions(shuffled.slice(0, 40))
+    const selected = shuffled.slice(0, 40)
+    setQuestions(selected)
     setTestStarted(true)
+    setTestCompleted(false)
     setTimeLeft(65 * 60)
     setUserAnswers([])
     setAnsweredQuestions(new Set())
     setCurrentQuestionIndex(0)
-    setTestCompleted(false)
+    localStorage.removeItem("pcap-progress")
   }
 
   const handleAnswerSubmit = (questionId: number, selectedAnswers: number[]) => {
@@ -98,12 +130,7 @@ export default function MockTest() {
 
   const submitTest = () => {
     setTestCompleted(true)
-  }
-
-  const formatTime = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
-    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`
+    localStorage.removeItem("pcap-progress")
   }
 
   const restartTest = () => {
@@ -114,6 +141,14 @@ export default function MockTest() {
     setUserAnswers([])
     setTimeLeft(65 * 60)
     setAnsweredQuestions(new Set())
+    setIsPaused(false)
+    localStorage.removeItem("pcap-progress")
+  }
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`
   }
 
   if (testCompleted) {
@@ -160,6 +195,9 @@ export default function MockTest() {
           <div className="timer">
             <div className={`time-display ${timeLeft < 300 ? "warning" : ""}`}>{formatTime(timeLeft)}</div>
             <p>Time Remaining</p>
+            <button className="btn btn-warning pause-btn" onClick={() => setIsPaused(!isPaused)}>
+              {isPaused ? "Resume" : "Pause"}
+            </button>
           </div>
         </div>
 
