@@ -9,23 +9,26 @@ import MockTest from "./pages/MockTest"
 import "./App.css"
 
 function AppContent() {
-  const location = useLocation();
+  const location = useLocation()
 
   return (
     <div className="app">
-      <Navbar />
+      {/* Show Navbar everywhere except Mock Test page */}
+      {location.pathname !== "/mock-test" && <Navbar />}
+
       <main className="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/practice" element={<PracticeQuestions />} />
           <Route path="/mock-test" element={<MockTest />} />
+          
         </Routes>
       </main>
 
       {/* Show Footer only on Home Page */}
       {location.pathname === "/" && <Footer />}
     </div>
-  );
+  )
 }
 
 export default function App() {
@@ -33,5 +36,5 @@ export default function App() {
     <Router>
       <AppContent />
     </Router>
-  );
+  )
 }

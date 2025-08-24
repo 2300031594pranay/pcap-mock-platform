@@ -562,7 +562,404 @@
     "correctAnswers": [0],
     "explanation": "Cannot convert 'abc' to integer — this raises a ValueError.",
     "topic": "Exceptions"
+  },
+  
+  {
+    "id": 57,
+    "question": "A compiler is a program designed to (select two answers)",
+    "options": [
+      "rearrange the source code to make it clearer",
+      "check the source code in order to see if it’s correct",
+      "execute the source code",
+      "translate the source code into machine code"
+    ],
+    "correctAnswers": [1, 3],
+    "explanation": "A compiler checks the source code for correctness and translates it into machine code; it does not execute it directly or rearrange it.",
+    "topic": "Basics of Programming"
+  },
+  {
+    "id": 58,
+    "question": "You are going to read just one character from a stream called s. Which statement would you use?",
+    "options": [
+      "ch = read(s, 1)",
+      "ch = s.input(1)",
+      "ch = input(s, 1)",
+      "ch = s.read(1)"
+    ],
+    "correctAnswers": [3],
+    "explanation": "The read() method of a file object reads the specified number of characters; hence, s.read(1) reads one character.",
+    "topic": "File Handling"
+  },
+  {
+    "id": 59,
+    "question": "Can a module run like regular code?",
+    "options": [
+      "yes, and it can differentiate its behavior between the regular launch and import",
+      "it depends on the Python version",
+      "yes, but it cannot differentiate its behavior between the regular launch and import",
+      "no. it is not possible; a module can be imported, not run"
+    ],
+    "correctAnswers": [0],
+    "explanation": "A module can be executed as a script using __name__ == '__main__' to differentiate behavior from being imported.",
+    "topic": "Modules"
+  },
+  {
+    "id": 60,
+    "question": "Which of the following sentences are true? (Select two answers)",
+    "options": [
+      "lists may not be stored inside tuples",
+      "tuples may be stored inside lists",
+      "tuples may not be stored inside tuples",
+      "lists may be stored inside lists"
+    ],
+    "correctAnswers": [1, 3],
+    "explanation": "Tuples can contain lists, and lists can contain other lists; lists can be stored inside tuples too, so a) is false, c) is false.",
+    "topic": "Data Structures"
+  },
+  {
+    "id": 61,
+    "question": "How many elements will the list2 list contain after execution of the following snippet?\nList1 = [False for i in range(1,10)]\nlist2 = list1[-1:1:-1]",
+    "options": [
+      "zero",
+      "five",
+      "seven",
+      "three"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Slicing [start:stop:step] with -1 step reverses the list from index -1 to 2, resulting in 7 elements.",
+    "topic": "Lists"
+  },
+  {
+    "id": 62,
+    "question": "Which of the following literals reflect the value given as 34.23? (select two answers)",
+    "options": [
+      ".3423e2",
+      "3423e-2",
+      ".3423e-2",
+      "3423e2"
+    ],
+    "correctAnswers": [0, 1],
+    "explanation": "Both .3423e2 (0.3423 * 10^2 = 34.23) and 3423e-2 (3423 * 10^-2 = 34.23) correctly represent 34.23.",
+    "topic": "Literals"
+  },
+  {
+    "id": 63,
+    "question": "What can you deduce from the following statement? str = open('file.txt', 'rt') (Select two answers)",
+    "options": [
+      "str is a string read in from the file named file.txt",
+      "a new line character translation will be performed during the reads",
+      "if file.txt does not exist, it will be created",
+      "the opened file cannot be written with the use of the str variable"
+    ],
+    "correctAnswers": [1, 3],
+    "explanation": "The 'rt' mode opens the file for reading as text, performing newline translation. It cannot be used for writing.",
+    "topic": "File Handling"
+  },
+  {
+    "id": 64,
+    "question": "Select the true statements: (select all that apply)",
+    "options": [
+      "The class keyword marks the beginning of the class definition",
+      "An object cannot contain any references to other objects",
+      "A class may define an object",
+      "A constructor is used to instantiate an object",
+      "An object variable is a variable that is stored separately in every object"
+    ],
+    "correctAnswers": [0, 2, 3],
+    "explanation": "Classes are defined using 'class', can define objects, and constructors instantiate objects. Objects can contain references, and object variables may or may not be separate.",
+    "topic": "OOP Concepts"
+  },
+  {
+    "id": 65,
+    "question": "What will the value of the i variable be when the following loop finishes its execution?\nfor i in range(10): pass",
+    "options": [
+      "10",
+      "the variable becomes unavailable",
+      "11",
+      "9"
+    ],
+    "correctAnswers": [3],
+    "explanation": "The last value assigned to i in range(10) is 9, after which the loop ends.",
+    "topic": "Loops"
+  },
+  {
+    "id": 66,
+    "question": "The first parameter of each method:",
+    "options": [
+      "holds a reference to the currently processed object",
+      "is always set to None",
+      "is set to a unique random value",
+      "is set by the first argument's value"
+    ],
+    "correctAnswers": [0],
+    "explanation": "In Python, the first parameter of a method (commonly 'self') refers to the current object instance.",
+    "topic": "OOP Concepts"
+  },
+
+  {
+    "id": 67,
+    "question": "Which of the following is a valid way to create a Python module?",
+    "options": [
+      "A file with .py extension containing functions and classes",
+      "A folder without __init__.py",
+      "A text file with .txt extension",
+      "A compiled C program"
+    ],
+    "correctAnswers": [0],
+    "explanation": "A Python module is any file with a .py extension containing Python code such as functions or classes.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 68,
+    "question": "Which exception is raised when trying to access a missing dictionary key?",
+    "options": [
+      "KeyError",
+      "IndexError",
+      "ValueError",
+      "TypeError"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Accessing a key that does not exist in a dictionary raises a KeyError.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 69,
+    "question": "What does the string method `strip()` do?",
+    "options": [
+      "Removes spaces from the start and end of the string",
+      "Removes all spaces in the string",
+      "Converts string to uppercase",
+      "Removes numbers from the string"
+    ],
+    "correctAnswers": [0],
+    "explanation": "`strip()` removes leading and trailing whitespace from a string.",
+    "topic": "Strings"
+  },
+  {
+    "id": 70,
+    "question": "Which of the following correctly creates an instance of a class `Person`?",
+    "options": [
+      "p = Person()",
+      "p = new Person()",
+      "p = Person",
+      "p = Person.new()"
+    ],
+    "correctAnswers": [0],
+    "explanation": "In Python, you instantiate a class using `ClassName()`.",
+    "topic": "OOP"
+  },
+  {
+    "id": 71,
+    "question": "Which statement correctly defines a lambda function that multiplies two numbers?",
+    "options": [
+      "lambda x, y: x * y",
+      "def lambda(x, y): x * y",
+      "lambda multiply(x, y): return x * y",
+      "lambda x, y -> x * y"
+    ],
+    "correctAnswers": [0],
+    "explanation": "A lambda function is defined as `lambda arguments: expression`.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 72,
+    "question": "What will be the result of `bool('False')`?",
+    "options": [
+      "False",
+      "True",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Any non-empty string in Python evaluates to True, even 'False'.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 73,
+    "question": "Which of the following is true about the `__name__` variable in Python?",
+    "options": [
+      "It is set to '__main__' when the module is run directly",
+      "It is always '__module__'",
+      "It is used to define classes",
+      "It stores the module's docstring"
+    ],
+    "correctAnswers": [0],
+    "explanation": "`__name__` is set to '__main__' if the module is run directly, otherwise it is set to the module name.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 74,
+    "question": "What exception is raised when an operation is performed on an incompatible type?",
+    "options": [
+      "TypeError",
+      "ValueError",
+      "NameError",
+      "KeyError"
+    ],
+    "correctAnswers": [0],
+    "explanation": "TypeError is raised when an operation is applied to an object of inappropriate type.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 75,
+    "question": "What will `'abc123'.isalnum()` return?",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [0],
+    "explanation": "`isalnum()` returns True if all characters are alphanumeric (letters or numbers) and the string is non-empty.",
+    "topic": "Strings"
+  },
+  {
+    "id": 76,
+    "question": "Which method is called automatically when an object is deleted?",
+    "options": [
+      "__del__",
+      "__init__",
+      "__new__",
+      "__str__"
+    ],
+    "correctAnswers": [0],
+    "explanation": "`__del__` is called when an object is about to be destroyed.",
+    "topic": "OOP"
+  },
+  {
+    "id": 77,
+    "question": "What is the output of `[x**2 for x in range(3)]`?",
+    "options": [
+      "[0, 1, 4]",
+      "[1, 4, 9]",
+      "[0, 1, 2]",
+      "Error"
+    ],
+    "correctAnswers": [0],
+    "explanation": "List comprehension `[x**2 for x in range(3)]` computes squares of 0,1,2 resulting in [0,1,4].",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 78,
+    "question": "Which statement correctly imports the `random` module?",
+    "options": [
+      "import random",
+      "from random import random",
+      "import random()",
+      "random import"
+    ],
+    "correctAnswers": [0],
+    "explanation": "The correct syntax is simply `import random`.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 79,
+    "question": "Which exception occurs when a variable is referenced before assignment?",
+    "options": [
+      "NameError",
+      "TypeError",
+      "ValueError",
+      "KeyError"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Referencing a variable before assignment raises a NameError.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 80,
+    "question": "What does `'hello world'.title()` return?",
+    "options": [
+      "'Hello World'",
+      "'hello world'",
+      "'HELLO WORLD'",
+      "'Hello world'"
+    ],
+    "correctAnswers": [0],
+    "explanation": "`title()` capitalizes the first letter of each word in the string.",
+    "topic": "Strings"
+  },
+  {
+    "id": 81,
+    "question": "What will be printed by the following code?\n\nclass A:\n    def __str__(self):\n        return 'Instance of A'\n\nprint(A())",
+    "options": [
+      "Instance of A",
+      "<__main__.A object at 0x...>",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [0],
+    "explanation": "The __str__ method defines what is printed when an object is converted to a string or printed.",
+    "topic": "OOP"
+  },
+  {
+    "id": 82,
+    "question": "What is the output of `list(map(lambda x: x*2, [1,2,3]))`?",
+    "options": [
+      "[2, 4, 6]",
+      "[1, 4, 9]",
+      "[1, 2, 3]",
+      "Error"
+    ],
+    "correctAnswers": [0],
+    "explanation": "The map applies the lambda function to each element, doubling each number.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 83,
+    "question": "Which of the following is true about Python packages?",
+    "options": [
+      "Packages are directories containing modules and an __init__.py file",
+      "Packages are single .py files only",
+      "Packages cannot contain sub-packages",
+      "Packages must be imported using importlib only"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Python packages are directories with `__init__.py` and can contain modules and sub-packages.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 84,
+    "question": "Which exception is raised when performing an invalid arithmetic operation on incompatible types?",
+    "options": [
+      "TypeError",
+      "ValueError",
+      "NameError",
+      "KeyError"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Invalid arithmetic operations between incompatible types raise TypeError.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 85,
+    "question": "What will `'Python programming'.split()` return?",
+    "options": [
+      "['Python', 'programming']",
+      "['Pythonprogramming']",
+      "['Python', '', 'programming']",
+      "Error"
+    ],
+    "correctAnswers": [0],
+    "explanation": "`split()` with no arguments splits the string at whitespace.",
+    "topic": "Strings"
+  },
+  {
+    "id": 86,
+    "question": "Which method is used to get the length of a list?",
+    "options": [
+      "len(list)",
+      "list.len()",
+      "list.length()",
+      "length(list)"
+    ],
+    "correctAnswers": [0],
+    "explanation": "The built-in function `len()` returns the number of elements in a list.",
+    "topic": "Miscellaneous"
   }
+
+
+
+
   
   
 ]

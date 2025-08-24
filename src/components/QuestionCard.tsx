@@ -23,7 +23,11 @@ interface QuestionCardProps {
   questionNumber: number
   totalQuestions: number
   onAnswered?: (questionId: number) => void
-  onAnswerSubmit?: (questionId: number, selectedAnswers: number[]) => void
+  onAnswerSubmit?: (
+    questionId: number,
+    selectedAnswers: number[],
+    isCorrect: boolean
+  ) => void
   showExplanation?: boolean
   userAnswer?: UserAnswer
 }
@@ -41,78 +45,78 @@ export default function QuestionCard({
   const [hasAnswered, setHasAnswered] = useState(false)
   const [showResult, setShowResult] = useState(false)
 
+  // ✅ Reset state whenever question changes or external saved answer is provided
   useEffect(() => {
     if (userAnswer) {
       setSelectedAnswers(userAnswer.selectedAnswers)
       setHasAnswered(true)
-      setShowResult(showExplanation)
+      // Always show result if we have a stored answer
+      setShowResult(true)
     } else {
       setSelectedAnswers([])
       setHasAnswered(false)
       setShowResult(false)
     }
-  }, [question.id, userAnswer, showExplanation])
+  }, [question.id, userAnswer])
 
+  // ✅ Option select handler
   const handleOptionSelect = (optionIndex: number) => {
-    if (hasAnswered && !showExplanation) return
+    // Block changing answers AFTER submission
+    if (hasAnswered) return
 
     if (question.correctAnswers.length === 1) {
-      // Single correct answer
+      // Single choice
       setSelectedAnswers([optionIndex])
     } else {
-      // Multiple correct answers
+      // Multi choice
       setSelectedAnswers((prev) =>
-        prev.includes(optionIndex) ? prev.filter((index) => index !== optionIndex) : [...prev, optionIndex],
+        prev.includes(optionIndex)
+          ? prev.filter((i) => i !== optionIndex)
+          : [...prev, optionIndex]
       )
     }
   }
 
+  // ✅ Correctness check
+  const isAnswerCorrect = () => {
+    return (
+      selectedAnswers.length === question.correctAnswers.length &&
+      selectedAnswers.every((ans) => question.correctAnswers.includes(ans))
+    )
+  }
+
+  // ✅ Submit handler
   const handleSubmit = () => {
     if (selectedAnswers.length === 0) return
 
     setHasAnswered(true)
+    const correct = isAnswerCorrect()
 
-    if (showExplanation) {
-      setShowResult(true)
-      onAnswered?.(question.id)
-    } else {
-      onAnswerSubmit?.(question.id, selectedAnswers)
-    }
+    // Notify parent
+    onAnswered?.(question.id)
+    onAnswerSubmit?.(question.id, selectedAnswers, correct)
+
+    setShowResult(true) // Always show result after submission
   }
 
-  const isCorrectAnswer = (optionIndex: number) => {
-    return question.correctAnswers.includes(optionIndex)
-  }
-
-  const getOptionClass = (optionIndex: number) => {
+  // ✅ Dynamic option CSS
+  const getOptionClass = (index: number) => {
     if (!hasAnswered || !showResult) {
-      return selectedAnswers.includes(optionIndex) ? "selected" : ""
+      return selectedAnswers.includes(index) ? "selected" : ""
     }
 
-    const classes = []
-
-    if (selectedAnswers.includes(optionIndex)) {
-      classes.push("selected")
+    if (question.correctAnswers.includes(index)) {
+      return "correct"
     }
-
-    if (isCorrectAnswer(optionIndex)) {
-      classes.push("correct")
-    } else if (selectedAnswers.includes(optionIndex)) {
-      classes.push("incorrect")
+    if (selectedAnswers.includes(index) && !question.correctAnswers.includes(index)) {
+      return "incorrect"
     }
-
-    return classes.join(" ")
-  }
-
-  const isAnswerCorrect = () => {
-    return (
-      selectedAnswers.length === question.correctAnswers.length &&
-      selectedAnswers.every((answer) => question.correctAnswers.includes(answer))
-    )
+    return ""
   }
 
   return (
     <div className="question-card">
+      {/* Header */}
       <div className="question-header">
         <div className="question-info">
           <span className="question-number">
@@ -125,43 +129,63 @@ export default function QuestionCard({
         </div>
       </div>
 
+      {/* Question text */}
       <div className="question-text">
         <pre>{question.question}</pre>
       </div>
 
+      {/* Options */}
       <div className="options">
-        {question.options.map((option, index) => (
-          <div key={index} className={`option ${getOptionClass(index)}`} onClick={() => handleOptionSelect(index)}>
+        {question.options.map((option, idx) => (
+          <div
+            key={idx}
+            className={`option ${getOptionClass(idx)}`}
+            onClick={() => handleOptionSelect(idx)}
+          >
             <div className="option-marker">
               {question.correctAnswers.length === 1 ? (
                 <div className="radio-marker" />
               ) : (
-                <div className="checkbox-marker">{selectedAnswers.includes(index) && "✓"}</div>
+                <div className="checkbox-marker">
+                  {selectedAnswers.includes(idx) && "✓"}
+                </div>
               )}
             </div>
             <div className="option-text">
-              <span className="option-label">{String.fromCharCode(65 + index)}.</span>
+              <span className="option-label">{String.fromCharCode(65 + idx)}.</span>
               <pre>{option}</pre>
             </div>
           </div>
         ))}
       </div>
 
+      {/* Submit button */}
       {!hasAnswered && (
-        <button className="submit-btn" onClick={handleSubmit} disabled={selectedAnswers.length === 0}>
+        <button
+          className="submit-btn"
+          onClick={handleSubmit}
+          disabled={selectedAnswers.length === 0}
+        >
           Submit Answer
         </button>
       )}
 
+      {/* Results + Explanation */}
       {hasAnswered && showResult && (
         <div className="result-section">
-          <div className={`result-indicator ${isAnswerCorrect() ? "correct" : "incorrect"}`}>
+          <div
+            className={`result-indicator ${
+              isAnswerCorrect() ? "correct" : "incorrect"
+            }`}
+          >
             {isAnswerCorrect() ? "✓ Correct!" : "✗ Incorrect"}
           </div>
-          <div className="explanation">
-            <h4>Explanation:</h4>
-            <p>{question.explanation}</p>
-          </div>
+          {showExplanation && (
+            <div className="explanation">
+              <h4>Explanation:</h4>
+              <p>{question.explanation}</p>
+            </div>
+          )}
         </div>
       )}
     </div>

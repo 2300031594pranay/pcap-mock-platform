@@ -26,16 +26,18 @@
   margin-bottom: 0.5rem;
 }
 
+/* === Progress Bar (used in both sidebar + main) === */
 .progress-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .progress-bar {
-  height: 8px;
+  height: 10px;
   background: #e9ecef;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -45,7 +47,14 @@
   transition: width 0.3s ease;
 }
 
-/* Question nav inside sidebar */
+.progress-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #444;
+  text-align: right;
+}
+
+/* === Question nav inside sidebar === */
 .sidebar-question-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));

@@ -12,7 +12,7 @@ interface Question {
   options: string[]
   correctAnswers: number[]
   explanation: string
-  topic: string
+  topic: string // Added so QuestionCard works
 }
 
 interface UserAnswer {
@@ -27,11 +27,10 @@ export default function MockTest() {
   const [questions, setQuestions] = useState<Question[]>([])
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([])
-  const [timeLeft, setTimeLeft] = useState(65 * 60) // 65 minutes in seconds
-  const [isPaused, setIsPaused] = useState(false)
+  const [timeLeft, setTimeLeft] = useState(65 * 60)
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(new Set())
 
-  // Load saved progress
+  // Load saved progress if available
   useEffect(() => {
     const saved = localStorage.getItem("pcap-progress")
     if (saved) {
@@ -47,7 +46,7 @@ export default function MockTest() {
 
   // Timer logic
   useEffect(() => {
-    if (testStarted && !testCompleted && timeLeft > 0 && !isPaused) {
+    if (testStarted && !testCompleted && timeLeft > 0) {
       const timer = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev <= 1) {
@@ -59,7 +58,7 @@ export default function MockTest() {
       }, 1000)
       return () => clearInterval(timer)
     }
-  }, [testStarted, testCompleted, timeLeft, isPaused])
+  }, [testStarted, testCompleted, timeLeft])
 
   // Save progress to localStorage
   useEffect(() => {
@@ -77,9 +76,15 @@ export default function MockTest() {
     }
   }, [questions, userAnswers, timeLeft, currentQuestionIndex, answeredQuestions, testStarted, testCompleted])
 
-  const startTest = () => {
+  // Function to select 40 random questions and add empty topic
+  const getRandomQuestions = (): Question[] => {
     const shuffled = [...questionsData].sort(() => 0.5 - Math.random())
-    const selected = shuffled.slice(0, 40)
+    return shuffled.slice(0, 40).map(q => ({ ...q, topic: "" })) // add topic as empty string
+  }
+
+  // Start test with fresh questions
+  const startTest = () => {
+    const selected = getRandomQuestions()
     setQuestions(selected)
     setTestStarted(true)
     setTestCompleted(false)
@@ -90,6 +95,8 @@ export default function MockTest() {
     localStorage.removeItem("pcap-progress")
   }
 
+  const restartTest = () => startTest()
+
   const handleAnswerSubmit = (questionId: number, selectedAnswers: number[]) => {
     const question = questions.find((q) => q.id === questionId)
     if (!question) return
@@ -98,11 +105,7 @@ export default function MockTest() {
       selectedAnswers.length === question.correctAnswers.length &&
       selectedAnswers.every((answer) => question.correctAnswers.includes(answer))
 
-    const newAnswer: UserAnswer = {
-      questionId,
-      selectedAnswers,
-      isCorrect,
-    }
+    const newAnswer: UserAnswer = { questionId, selectedAnswers, isCorrect }
 
     setUserAnswers((prev) => {
       const filtered = prev.filter((answer) => answer.questionId !== questionId)
@@ -112,36 +115,11 @@ export default function MockTest() {
     setAnsweredQuestions((prev) => new Set([...prev, questionId]))
   }
 
-  const goToQuestion = (index: number) => {
-    setCurrentQuestionIndex(index)
-  }
-
-  const nextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1)
-    }
-  }
-
-  const prevQuestion = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1)
-    }
-  }
-
+  const goToQuestion = (index: number) => setCurrentQuestionIndex(index)
+  const nextQuestion = () => setCurrentQuestionIndex((prev) => Math.min(prev + 1, questions.length - 1))
+  const prevQuestion = () => setCurrentQuestionIndex((prev) => Math.max(prev - 1, 0))
   const submitTest = () => {
     setTestCompleted(true)
-    localStorage.removeItem("pcap-progress")
-  }
-
-  const restartTest = () => {
-    setTestStarted(false)
-    setTestCompleted(false)
-    setQuestions([])
-    setCurrentQuestionIndex(0)
-    setUserAnswers([])
-    setTimeLeft(65 * 60)
-    setAnsweredQuestions(new Set())
-    setIsPaused(false)
     localStorage.removeItem("pcap-progress")
   }
 
@@ -195,9 +173,6 @@ export default function MockTest() {
           <div className="timer">
             <div className={`time-display ${timeLeft < 300 ? "warning" : ""}`}>{formatTime(timeLeft)}</div>
             <p>Time Remaining</p>
-            <button className="btn btn-warning pause-btn" onClick={() => setIsPaused(!isPaused)}>
-              {isPaused ? "Resume" : "Pause"}
-            </button>
           </div>
         </div>
 
@@ -206,9 +181,9 @@ export default function MockTest() {
             {questions.map((_, index) => (
               <button
                 key={index}
-                className={`question-nav-btn ${
-                  index === currentQuestionIndex ? "active" : ""
-                } ${answeredQuestions.has(questions[index].id) ? "completed" : ""}`}
+                className={`question-nav-btn ${index === currentQuestionIndex ? "active" : ""} ${
+                  answeredQuestions.has(questions[index].id) ? "completed" : ""
+                }`}
                 onClick={() => goToQuestion(index)}
               >
                 {index + 1}
