@@ -1,162 +1,122 @@
-/* === Layout === */
-.practice-layout {
+.practice-container {
   display: flex;
-  width: 100vw;
-  min-height: 100vh;
-  background-color: #f5f9fa;
-  overflow: hidden;
+  height: 100vh;  /* full screen height */
+  width: 100vw;   /* full screen width */
+  margin: 0;
+  padding: 0;
+  background: #f9fafb;
 }
 
-/* Sidebar */
-.practice-sidebar {
-  width: 260px;
-  background: #ffffff;
+/* Sidebar fixed left */
+.sidebar {
+  width: 20%;
+  min-width: 220px;
+  max-width: 300px;
+  background: #1e2a38;
+  color: white;
+  height: 100vh;
+  overflow-y: auto;
   border-right: 1px solid #ddd;
-  padding: 1rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  overflow-y: auto;       /* ✅ makes it scrollable */
-  max-height: 100vh;      /* ✅ prevents it from overflowing screen */
 }
 
-.practice-sidebar h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+/* Main content */
+.questions {
+  flex: 1; /* take remaining width */
+  padding: 20px 40px;
+  overflow-y: auto;
+  background: #fff;
 }
 
-/* === Progress Bar (used in both sidebar + main) === */
+/* Page title & desc */
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.page-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Progress bar */
 .progress-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
-
 .progress-bar {
-  height: 10px;
-  background: #e9ecef;
+  background: #e0e0e0;
   border-radius: 6px;
+  height: 10px;
   overflow: hidden;
 }
-
 .progress-fill {
+  background: #1abc9c;
   height: 100%;
-  background: #007bff;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
 }
-
 .progress-text {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #444;
-  text-align: right;
+  font-size: 13px;
+  color: #333;
+  margin-top: 6px;
 }
 
-/* === Question nav inside sidebar === */
-.sidebar-question-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  gap: 0.5rem;
-}
-
-.sidebar-question-btn {
-  padding: 0.6rem;
-  border: 1px solid #cccccc;
-  background: #f8f9fa;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.sidebar-question-btn.active {
-  background: #007bff;
-  color: #fff;
-  border-color: #007bff;
-}
-
-.sidebar-question-btn.completed {
-  background: #d4edda;
-  border-color: #28a745;
-  color: #155724;
-}
-
-.sidebar-question-btn:hover {
-  background: #e2e6ea;
-}
-
-/* === Main content === */
-.practice-main {
-  flex: 1;
-  padding: 2rem;
-  background: #f5f9fa;
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: center; /* center the content */
-  align-items: flex-start;
-}
-
-.practice-content {
-  max-width: 800px; /* ✅ controls readability */
+/* Question card wrapper */
+.question-section {
   width: 100%;
   background: #fff;
-  padding: 2rem;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.practice-content h1 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.practice-description {
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.5;
-}
-
-/* Question card section */
-.question-section {
-  margin-top: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Navigation buttons */
 .navigation-buttons {
-  margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  margin-top: 20px;
 }
-
 .btn {
-  padding: 0.6rem 1.4rem;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.2s;
 }
-
 .btn-primary {
-  background-color: #007bff;
-  color: white;
+  background: #1abc9c;
+  color: #fff;
 }
-
 .btn-primary:hover {
-  background-color: #0069d9;
+  background: #16a085;
 }
-
 .btn-secondary {
-  background-color: #6c757d;
-  color: white;
+  background: #95a5a6;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: #7f8c8d;
+}
+.btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
 }
 
-.btn-secondary:hover {
-  background-color: #5a6268;
+/* Responsive */
+@media (max-width: 768px) {
+  .practice-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  .questions {
+    width: 100%;
+    padding: 15px;
+  }
 }
