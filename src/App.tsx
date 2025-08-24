@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage"
 import PracticeQuestions from "./pages/PracticeQuestions"
 import MockTest from "./pages/MockTest"
 import "./App.css"
+import { NotFound } from "./components/NotFound"
 
 function AppContent() {
   const location = useLocation()
@@ -21,6 +22,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/practice" element={<PracticeQuestions />} />
           <Route path="/mock-test" element={<MockTest />} />
+          <Route path="*" element={<NotFound />} />
           
         </Routes>
       </main>
