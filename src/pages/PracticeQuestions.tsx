@@ -97,7 +97,7 @@ export default function PracticeQuestions() {
     if (currentQuestionIndex > 0) setCurrentQuestionIndex((prev) => prev - 1)
   }
 
-  // Calculate progress
+  // Calculate progresssss
   const progress = (answeredQuestions.size / questions.length) * 100
 
   return (
