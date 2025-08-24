@@ -156,4 +156,13 @@
     flex-direction: column;
     align-items: stretch;
   }
+  .time-display.warning {
+  color: red;
+  font-weight: bold;
+}
+
+.pause-btn {
+  margin-top: 10px;
+}
+
 }
