@@ -81,7 +81,51 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  border-radius: 12px;
+background: linear-gradient(135deg, #ff9966, #ff5e62);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* light shadow */
+  padding: 20px;
 }
+
+.question-btn {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  border: none;
+  border-radius: 6px;
+  /*background: #ffbf00; /* default gray */
+background-color: #2d3436;   /* dark charcoal */
+color: #fff;
+
+
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.question-btn:hover {
+  background: #1abc9c;
+}
+
+.question-btn.current {
+  background: #e67e22; /* orange for current */
+}
+
+.question-btn.answered {
+  background: #f1c40f; /* yellow for answered but not submitted */
+  color: #000;
+}
+
+.question-btn.submitted {
+  background: #2ecc71; /* green for submitted */
+  color: #fff;
+}
+
 
 .question-nav-btn {
   padding: 10px 14px;

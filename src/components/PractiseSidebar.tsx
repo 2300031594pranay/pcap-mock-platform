@@ -86,6 +86,7 @@ const PracticeSidebar: React.FC<PracticeSidebarProps> = ({
           gap: 8px;
           overflow-y: auto;
           max-height: calc(100vh - 250px); /* ✅ keeps sidebar scrollable */
+          border-radius: 8px;
         }
 
         .question-btn {

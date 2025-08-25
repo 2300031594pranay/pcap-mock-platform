@@ -176,21 +176,29 @@ export default function MockTest() {
           </div>
         </div>
 
-        <div className="question-navigation">
-          <div className="question-grid">
-            {questions.map((_, index) => (
-              <button
-                key={index}
-                className={`question-nav-btn ${index === currentQuestionIndex ? "active" : ""} ${
-                  answeredQuestions.has(questions[index].id) ? "completed" : ""
-                }`}
-                onClick={() => goToQuestion(index)}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
-        </div>
+     <div className="question-navigation">
+  <div className="question-grid">
+    {questions.map((_, index) => {
+      const isCurrent = index === currentQuestionIndex;
+      const isAnswered = answeredQuestions.has(questions[index].id);
+
+      return (
+        <button
+          key={index}
+          className={`question-btn 
+            ${isCurrent ? "current" : ""} 
+            ${isAnswered ? "answered" : ""}`}
+          onClick={() => goToQuestion(index)}
+          title={`Question ${index + 1}
+            ${isAnswered ? " (Answered)" : ""}`}
+        >
+          {index + 1}
+        </button>
+      );
+    })}
+  </div>
+</div>
+
 
         <div className="question-section">
           <QuestionCard
