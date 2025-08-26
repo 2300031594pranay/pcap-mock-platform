@@ -1,0 +1,1912 @@
+[
+  {
+    "id": 1,
+    "question": "How do you import a function named `add` from a module named `math_utils`?",
+    "options": [
+      "import add from math_utils",
+      "from math_utils import add",
+      "import math_utils.add",
+      "add from math_utils"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The correct syntax is `from math_utils import add`.",
+    "topic": "General"
+  },
+  {
+    "id": 2,
+    "question": "Which of the following statements is true about Python modules?",
+    "options": [
+      "A module can contain only variables.",
+      "A module must always have a main function.",
+      "You can import a module using the `import` keyword.",
+      "Modules cannot be reused across different scripts."
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Modules can be imported using the `import` keyword. They can contain functions, classes, and variables.",
+    "topic": "General"
+  },
+  {
+    "id": 3,
+    "question": "What does the `__init__.py` file do in a Python package?",
+    "options": [
+      "It initializes variables in a module.",
+      "It marks a directory as a Python package.",
+      "It is required to run Python scripts.",
+      "It handles memory allocation in Python."
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "`__init__.py` indicates to Python that a directory should be treated as a package.",
+    "topic": "General"
+  },
+  {
+    "id": 4,
+    "question": "What happens if a module is not found during import?",
+    "options": [
+      "NameError",
+      "ImportError",
+      "SyntaxError",
+      "ModuleNotFoundError"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "`ModuleNotFoundError` is raised when the module isn't found.",
+    "topic": "General"
+  },
+  {
+    "id": 5,
+    "question": "What will be the output of `dir(math)`?",
+    "options": [
+      "List of all variables in Python",
+      "Syntax error",
+      "List of all attributes and functions of the math module",
+      "Nothing"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "`dir(math)` returns all attributes and methods of the math module.",
+    "topic": "General"
+  },
+  {
+    "id": 6,
+    "question": "Which of these is the correct way to import all contents of a module?",
+    "options": [
+      "import all from module",
+      "import module.*",
+      "from module import *",
+      "module import all"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "`from module import *` imports all contents of the module.",
+    "topic": "General"
+  },
+  {
+    "id": 7,
+    "question": "What will be the output of the following code?\n\ntry:\n    1 / 0\nexcept ZeroDivisionError:\n    print('Zero Division')\nexcept:\n    print('Other Error')",
+    "options": [
+      "Zero Division",
+      "Other Error",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The ZeroDivisionError is explicitly caught, so 'Zero Division' will be printed.",
+    "topic": "General"
+  },
+  {
+    "id": 8,
+    "question": "Which keyword is used to raise an exception in Python?",
+    "options": [
+      "throw",
+      "raise",
+      "except",
+      "assert"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "`raise` is the correct keyword used to raise an exception in Python.",
+    "topic": "General"
+  },
+  {
+    "id": 9,
+    "question": "What is the output?\n\ntry:\n    x = int('abc')\nexcept ValueError:\n    print('Invalid')",
+    "options": [
+      "Invalid",
+      "abc",
+      "None",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The `int('abc')` raises a ValueError which is caught by the except block.",
+    "topic": "General"
+  },
+  {
+    "id": 10,
+    "question": "What is the purpose of the finally block in exception handling?",
+    "options": [
+      "To execute code only if no exception occurs",
+      "To handle all types of exceptions",
+      "To execute code regardless of exception occurrence",
+      "To ignore exceptions"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "The `finally` block is used to execute code regardless of whether an exception occurred or not.",
+    "topic": "General"
+  },
+  {
+    "id": 11,
+    "question": "Which of the following exceptions is raised when accessing a variable that doesn\u2019t exist?",
+    "options": [
+      "TypeError",
+      "ValueError",
+      "NameError",
+      "IndexError"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Accessing an undefined variable raises a NameError.",
+    "topic": "General"
+  },
+  {
+    "id": 12,
+    "question": "What is the result of 'hello'.capitalize()?",
+    "options": [
+      "Hello",
+      "hello",
+      "HELLO",
+      "Hello!"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The `capitalize()` method converts the first character to uppercase.",
+    "topic": "General"
+  },
+  {
+    "id": 13,
+    "question": "What is the output of:\n\nprint('a' * 3)",
+    "options": [
+      "aaa",
+      "a a a",
+      "aa a",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Multiplying a string repeats it: 'a' * 3 = 'aaa'.",
+    "topic": "General"
+  },
+  {
+    "id": 14,
+    "question": "Which of the following methods is used to check if all characters in a string are digits?",
+    "options": [
+      "isalpha()",
+      "isdigit()",
+      "isalnum()",
+      "isnumeric()"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "`isdigit()` checks if all characters in a string are digits.",
+    "topic": "General"
+  },
+  {
+    "id": 15,
+    "question": "What is the output of:\n\nprint('Python'[1:4])",
+    "options": [
+      "yth",
+      "ytho",
+      "Pyt",
+      "tho"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Slicing [1:4] includes characters at index 1, 2, 3 \u2192 'yth'.",
+    "topic": "General"
+  },
+  {
+    "id": 16,
+    "question": "What is returned by 'abc'.find('d')?",
+    "options": [
+      "-1",
+      "None",
+      "0",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`find()` returns -1 if the character is not found.",
+    "topic": "General"
+  },
+  {
+    "id": 17,
+    "question": "Which escape character is used for a newline?",
+    "options": [
+      "\\n",
+      "\\t",
+      "\\r",
+      "\\\\"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`\\n` is the escape character for a new line.",
+    "topic": "General"
+  },
+  {
+    "id": 18,
+    "question": "What does the method `strip()` do?",
+    "options": [
+      "Removes all characters",
+      "Trims whitespace",
+      "Replaces whitespace",
+      "Adds space"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "`strip()` removes leading and trailing whitespace.",
+    "topic": "General"
+  },
+  {
+    "id": 19,
+    "question": "What is the output of:\n\nprint('abcDEF'.lower())",
+    "options": [
+      "abcdef",
+      "ABCDEF",
+      "abcDEF",
+      "Abcdef"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`lower()` converts all characters to lowercase.",
+    "topic": "General"
+  },
+  {
+    "id": 20,
+    "question": "What is the output of:\n\nprint('Hello'.replace('l', 'x'))",
+    "options": [
+      "Hexxo",
+      "Hello",
+      "Hxxo",
+      "Helo"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`replace()` replaces all occurrences of 'l' with 'x'.",
+    "topic": "General"
+  },
+  {
+    "id": 21,
+    "question": "Which of the following statements correctly defines a module in Python?",
+    "options": [
+      "A module is a compiled C extension.",
+      "A module is a file containing Python definitions and statements.",
+      "A module is a built-in object that only contains variables.",
+      "A module is a special keyword for imports."
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "A Python module is simply a file that contains Python code \u2013 definitions and statements.",
+    "topic": "General"
+  },
+  {
+    "id": 22,
+    "question": "What will be the result of the following code?\n\nx = lambda a, b: a * b\nprint(x(2, 3))",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "6"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "The lambda function takes two arguments and multiplies them: 2 * 3 = 6.",
+    "topic": "General"
+  },
+  {
+    "id": 23,
+    "question": "What is the output of the following code?\n\nprint(\"hello\"[1:4])",
+    "options": [
+      "hell",
+      "ell",
+      "llo",
+      "hel"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "String slicing [1:4] returns characters from index 1 to 3 (not including 4): 'ell'.",
+    "topic": "General"
+  },
+  {
+    "id": 24,
+    "question": "What does the following code do?\n\nimport math\nprint(math.floor(4.7))",
+    "options": [
+      "4",
+      "5",
+      "4.7",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`math.floor()` returns the largest integer less than or equal to the input. So `floor(4.7)` = 4.",
+    "topic": "General"
+  },
+  {
+    "id": 25,
+    "question": "Which exception is raised when you try to access an undefined variable?",
+    "options": [
+      "SyntaxError",
+      "TypeError",
+      "NameError",
+      "IndexError"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Trying to access an undefined variable raises a NameError in Python.",
+    "topic": "General"
+  },
+  {
+    "id": 26,
+    "question": "What will be printed by the following code?\n\ndef add(a=2, b=3):\n    return a + b\n\nprint(add())",
+    "options": [
+      "5",
+      "2",
+      "3",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Default parameters are used: add(2, 3) \u2192 5.",
+    "topic": "General"
+  },
+  {
+    "id": 27,
+    "question": "Which method is used to add an item to the end of a list?",
+    "options": [
+      "add()",
+      "insert()",
+      "extend()",
+      "append()"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "`append()` adds an item to the end of a list.",
+    "topic": "General"
+  },
+  {
+    "id": 28,
+    "question": "Which of the following is not a valid string method in Python?",
+    "options": [
+      "split()",
+      "join()",
+      "append()",
+      "upper()"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "`append()` is used with lists, not strings.",
+    "topic": "General"
+  },
+  {
+    "id": 29,
+    "question": "What is the output?\n\nx = 10\ndef func():\n    x = 5\nfunc()\nprint(x)",
+    "options": [
+      "5",
+      "10",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The global `x` is not modified inside the function because `x` is redefined locally inside `func()`.",
+    "topic": "General"
+  },
+  {
+    "id": 30,
+    "question": "Which of the following statements about Python packages is true?",
+    "options": [
+      "A package is a single file.",
+      "A package cannot contain sub-packages.",
+      "A package is a directory with an __init__.py file.",
+      "Packages are only available in Python 3.10 and above."
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "A package is a directory with an `__init__.py` file to make it a package.",
+    "topic": "General"
+  },
+  {
+    "id": 31,
+    "question": "Which operator is used for exponentiation in Python?",
+    "options": [
+      "^",
+      "**",
+      "//",
+      "%"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "`**` is used for exponentiation. For example, `2 ** 3` equals 8.",
+    "topic": "General"
+  },
+  {
+    "id": 32,
+    "question": "What is the output?\n\nx = [1, 2, 3]\nprint(x[::-1])",
+    "options": [
+      "[1, 2, 3]",
+      "[3, 2, 1]",
+      "[1, 3, 2]",
+      "Error"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "`[::-1]` reverses the list.",
+    "topic": "General"
+  },
+  {
+    "id": 33,
+    "question": "Which of the following creates a class in Python?",
+    "options": [
+      "def MyClass():",
+      "class MyClass:",
+      "function MyClass():",
+      "new class MyClass:"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Python uses the `class` keyword to define classes.",
+    "topic": "General"
+  },
+  {
+    "id": 34,
+    "question": "Which method is used to read a file line by line?",
+    "options": [
+      "readlines()",
+      "read()",
+      "readline()",
+      "scan()"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`readlines()` reads the entire file and returns a list of lines.",
+    "topic": "General"
+  },
+  {
+    "id": 35,
+    "question": "Which statement is true about lambdas in Python?",
+    "options": [
+      "They are defined using the def keyword.",
+      "They can have multiple expressions.",
+      "They are anonymous functions.",
+      "They always return None."
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Lambdas are anonymous functions defined using the `lambda` keyword.",
+    "topic": "General"
+  },
+  {
+    "id": 36,
+    "question": "What is the output of:\n\nprint(type((5)))",
+    "options": [
+      "<class 'int'>",
+      "<class 'tuple'>",
+      "<class 'list'>",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`(5)` is just an integer in parentheses. Use `(5,)` for a tuple.",
+    "topic": "General"
+  },
+  {
+    "id": 37,
+    "question": "Which exception will be raised by the following code?\n\nint('abc')",
+    "options": [
+      "TypeError",
+      "NameError",
+      "ValueError",
+      "IndexError"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Trying to convert a non-numeric string to int raises a ValueError.",
+    "topic": "General"
+  },
+  {
+    "id": 38,
+    "question": "What is the output?\n\nprint(\"Hello\" * 2)",
+    "options": [
+      "HelloHello",
+      "Hello2",
+      "Error",
+      "2Hello"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "String repetition works with `*`. 'Hello' * 2 = 'HelloHello'.",
+    "topic": "General"
+  },
+  {
+    "id": 39,
+    "question": "Which of these is a valid list comprehension in Python?",
+    "options": [
+      "[x for x in range(5)]",
+      "x in [range(5)]",
+      "{x: x for x in 5}",
+      "for x in range(5): return x"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "List comprehensions use the syntax `[expression for item in iterable]`.",
+    "topic": "General"
+  },
+  {
+    "id": 40,
+    "question": "Which function returns the number of characters in a string?",
+    "options": [
+      "count()",
+      "length()",
+      "len()",
+      "size()"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "The built-in `len()` function returns the length of a string.",
+    "topic": "General"
+  },
+  {
+    "id": 41,
+    "question": "A compiler is a program designed to (select two answers)",
+    "options": [
+      "rearrange the source code to make it clearer",
+      "check the source code in order to see if it\u2019s correct",
+      "execute the source code",
+      "translate the source code into machine code"
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ],
+    "explanation": "A compiler checks the source code for correctness and translates it into machine code; it does not execute it directly or rearrange it.",
+    "topic": "General"
+  },
+  {
+    "id": 42,
+    "question": "You are going to read just one character from a stream called s. Which statement would you use?",
+    "options": [
+      "ch = read(s, 1)",
+      "ch = s.input(1)",
+      "ch = input(s, 1)",
+      "ch = s.read(1)"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "The read() method of a file object reads the specified number of characters; hence, s.read(1) reads one character.",
+    "topic": "General"
+  },
+  {
+    "id": 43,
+    "question": "Can a module run like regular code?",
+    "options": [
+      "yes, and it can differentiate its behavior between the regular launch and import",
+      "it depends on the Python version",
+      "yes, but it cannot differentiate its behavior between the regular launch and import",
+      "no. it is not possible; a module can be imported, not run"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "A module can be executed as a script using __name__ == '__main__' to differentiate behavior from being imported.",
+    "topic": "General"
+  },
+  {
+    "id": 44,
+    "question": "Which of the following sentences are true? (Select two answers)",
+    "options": [
+      "lists may not be stored inside tuples",
+      "tuples may be stored inside lists",
+      "tuples may not be stored inside tuples",
+      "lists may be stored inside lists"
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ],
+    "explanation": "Tuples can contain lists, and lists can contain other lists; lists can be stored inside tuples too, so a) is false, c) is false.",
+    "topic": "General"
+  },
+  {
+    "id": 45,
+    "question": "How many elements will the list2 list contain after execution of the following snippet?\nList1 = [False for i in range(1,10)]\nlist2 = list1[-1:1:-1]",
+    "options": [
+      "zero",
+      "five",
+      "seven",
+      "three"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "Slicing [start:stop:step] with -1 step reverses the list from index -1 to 2, resulting in 7 elements.",
+    "topic": "General"
+  },
+  {
+    "id": 46,
+    "question": "Which of the following literals reflect the value given as 34.23? (select two answers)",
+    "options": [
+      ".3423e2",
+      "3423e-2",
+      ".3423e-2",
+      "3423e2"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ],
+    "explanation": "Both .3423e2 (0.3423 * 10^2 = 34.23) and 3423e-2 (3423 * 10^-2 = 34.23) correctly represent 34.23.",
+    "topic": "General"
+  },
+  {
+    "id": 47,
+    "question": "What can you deduce from the following statement? str = open('file.txt', 'rt') (Select two answers)",
+    "options": [
+      "str is a string read in from the file named file.txt",
+      "a new line character translation will be performed during the reads",
+      "if file.txt does not exist, it will be created",
+      "the opened file cannot be written with the use of the str variable"
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ],
+    "explanation": "The 'rt' mode opens the file for reading as text, performing newline translation. It cannot be used for writing.",
+    "topic": "General"
+  },
+  {
+    "id": 48,
+    "question": "Select the true statements: (select all that apply)",
+    "options": [
+      "The class keyword marks the beginning of the class definition",
+      "An object cannot contain any references to other objects",
+      "A class may define an object",
+      "A constructor is used to instantiate an object",
+      "An object variable is a variable that is stored separately in every object"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Classes are defined using 'class', can define objects, and constructors instantiate objects. Objects can contain references, and object variables may or may not be separate.",
+    "topic": "General"
+  },
+  {
+    "id": 49,
+    "question": "What will the value of the i variable be when the following loop finishes its execution?\nfor i in range(10): pass",
+    "options": [
+      "10",
+      "the variable becomes unavailable",
+      "11",
+      "9"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "The last value assigned to i in range(10) is 9, after which the loop ends.",
+    "topic": "General"
+  },
+  {
+    "id": 50,
+    "question": "The first parameter of each method:",
+    "options": [
+      "holds a reference to the currently processed object",
+      "is always set to None",
+      "is set to a unique random value",
+      "is set by the first argument's value"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "In Python, the first parameter of a method (commonly 'self') refers to the current object instance.",
+    "topic": "General"
+  },
+  {
+    "id": 51,
+    "question": "What is the output of the following code?\n\nx = 5\ny = 2\nprint(x // y)",
+    "options": [
+      "2.5",
+      "2",
+      "3",
+      "2.0"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The // operator performs floor division, which returns the largest integer less than or equal to the division result. 5 // 2 = 2.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 52,
+    "question": "Which of the following are valid Python variable names? (Select all that apply)",
+    "options": [
+      "_variable",
+      "2variable",
+      "variable_2",
+      "variable-2"
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ],
+    "explanation": "Valid Python variable names can start with a letter or underscore, followed by letters, digits, or underscores. They cannot start with a digit or contain hyphens.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 53,
+    "question": "What is the result of the following expression?\n\nbool([])",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "Error"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "An empty list [] is considered falsy in Python, so bool([]) returns False.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 54,
+    "question": "What will be printed by this code?\n\nfor i in range(3):\n    if i == 1:\n        continue\n    print(i)",
+    "options": [
+      "0 1 2",
+      "0 2",
+      "1 2",
+      "0 1"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The continue statement skips the rest of the loop iteration when i == 1, so only 0 and 2 are printed.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 55,
+    "question": "Which loop will execute exactly 5 times?",
+    "options": [
+      "for i in range(5):",
+      "for i in range(1, 5):",
+      "for i in range(0, 6):",
+      "for i in range(1, 6):"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "range(5) generates numbers from 0 to 4 (5 numbers total). range(1, 5) generates 1 to 4 (4 numbers), range(0, 6) generates 0 to 5 (6 numbers), and range(1, 6) generates 1 to 5 (5 numbers), but range(5) is the most direct answer.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 56,
+    "question": "What is the output of this code?\n\nx = 10\nif x > 5:\n    if x < 15:\n        print('A')\n    else:\n        print('B')\nelse:\n    print('C')",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "No output"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "x = 10, which is > 5, so we enter the first if block. Then x < 15 is true, so 'A' is printed.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 57,
+    "question": "What happens when you call a function without providing a required argument?",
+    "options": [
+      "The function uses None as default",
+      "A TypeError is raised",
+      "The function returns None",
+      "The argument becomes an empty string"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "When a required argument is missing, Python raises a TypeError indicating that the function is missing a required positional argument.",
+    "topic": "Functions"
+  },
+  {
+    "id": 58,
+    "question": "What is the output of this code?\n\ndef func(a, b=2, c=3):\n    return a + b + c\n\nprint(func(1, c=5))",
+    "options": [
+      "6",
+      "8",
+      "9",
+      "11"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "func(1, c=5) calls the function with a=1, b=2 (default), and c=5. The result is 1 + 2 + 5 = 8.",
+    "topic": "Functions"
+  },
+  {
+    "id": 59,
+    "question": "Which of the following statements about Python functions are true? (Select all that apply)",
+    "options": [
+      "Functions can return multiple values",
+      "Functions can have default parameters",
+      "Functions must always return a value",
+      "Functions can be assigned to variables"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Python functions can return multiple values (as tuples), have default parameters, and be assigned to variables. They don't always need to return a value (they return None by default).",
+    "topic": "Functions"
+  },
+  {
+    "id": 60,
+    "question": "What is the output of this code?\n\nimport math\nprint(math.ceil(4.2))",
+    "options": [
+      "4",
+      "5",
+      "4.0",
+      "5.0"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "math.ceil() returns the smallest integer greater than or equal to the given number. math.ceil(4.2) returns 5.",
+    "topic": "Modules"
+  },
+  {
+    "id": 61,
+    "question": "Which statement correctly imports only the sqrt function from the math module?",
+    "options": [
+      "import sqrt from math",
+      "from math import sqrt",
+      "import math.sqrt",
+      "from math import sqrt as s"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The correct syntax to import a specific function from a module is 'from module_name import function_name'.",
+    "topic": "Modules"
+  },
+  {
+    "id": 62,
+    "question": "What happens when you try to access a module that hasn't been imported?",
+    "options": [
+      "Python automatically imports it",
+      "A NameError is raised",
+      "The module returns None",
+      "Python creates an empty module"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "If you try to use a module that hasn't been imported, Python raises a NameError because the module name is not defined in the current namespace.",
+    "topic": "Modules"
+  },
+  {
+    "id": 63,
+    "question": "What is the output of this code?\n\ntry:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print('Error caught')\nelse:\n    print('No error')\nfinally:\n    print('Always executed')",
+    "options": [
+      "Error caught\nAlways executed",
+      "No error\nAlways executed",
+      "Always executed",
+      "Error caught"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The division by zero raises a ZeroDivisionError, which is caught by the except block. The finally block always executes regardless of whether an exception occurred.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 64,
+    "question": "Which of the following are built-in exception types in Python? (Select all that apply)",
+    "options": [
+      "ValueError",
+      "IndexError",
+      "CustomError",
+      "TypeError"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "ValueError, IndexError, and TypeError are all built-in Python exceptions. CustomError is not a built-in exception type.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 65,
+    "question": "What is the purpose of the 'raise' statement in Python?",
+    "options": [
+      "To catch exceptions",
+      "To manually trigger an exception",
+      "To ignore exceptions",
+      "To define new exception types"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The 'raise' statement is used to manually trigger or re-raise an exception in Python.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 66,
+    "question": "What is the output of this code?\n\nclass Dog:\n    def __init__(self, name):\n        self.name = name\n    \n    def bark(self):\n        return f'{self.name} says woof!'\n\nmy_dog = Dog('Rex')\nprint(my_dog.bark())",
+    "options": [
+      "Rex says woof!",
+      "Dog says woof!",
+      "woof!",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The Dog class is instantiated with name='Rex', and the bark method returns a formatted string using the instance's name attribute.",
+    "topic": "OOP"
+  },
+  {
+    "id": 67,
+    "question": "Which of the following statements about Python classes are true? (Select all that apply)",
+    "options": [
+      "__init__ is the constructor method",
+      "self refers to the instance of the class",
+      "Class methods must always have self as first parameter",
+      "Classes can inherit from multiple parent classes"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "__init__ is the constructor, self refers to the instance, and Python supports multiple inheritance. However, static methods and class methods don't require self as the first parameter.",
+    "topic": "OOP"
+  },
+  {
+    "id": 68,
+    "question": "What is the output of this inheritance example?\n\nclass Animal:\n    def speak(self):\n        return 'Some sound'\n\nclass Cat(Animal):\n    def speak(self):\n        return 'Meow'\n\nmy_cat = Cat()\nprint(my_cat.speak())",
+    "options": [
+      "Some sound",
+      "Meow",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The Cat class overrides the speak method from Animal, so when called on a Cat instance, it returns 'Meow'.",
+    "topic": "OOP"
+  },
+  {
+    "id": 69,
+    "question": "What does the super() function do in Python?",
+    "options": [
+      "Creates a new instance",
+      "Calls the parent class method",
+      "Deletes the current instance",
+      "Checks if a class is a subclass"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The super() function is used to call methods from the parent class, allowing access to inherited methods that may have been overridden.",
+    "topic": "OOP"
+  },
+  {
+    "id": 70,
+    "question": "What is the output of this code?\n\nmy_list = [1, 2, 3]\nmy_list.append(4)\nprint(len(my_list))",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Error"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The list starts with 3 elements [1, 2, 3], then append(4) adds one more element, making the total length 4.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 71,
+    "question": "Which of the following will create a dictionary in Python?",
+    "options": [
+      "{1, 2, 3}",
+      "{'a': 1, 'b': 2}",
+      "[1, 2, 3]",
+      "(1, 2, 3)"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Dictionaries are created using curly braces with key-value pairs separated by colons. {1, 2, 3} creates a set, [1, 2, 3] creates a list, and (1, 2, 3) creates a tuple.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 72,
+    "question": "What is the result of this string operation?\n\ntext = 'Hello World'\nprint(text[6:11])",
+    "options": [
+      "World",
+      "Hello",
+      "orld",
+      "Worl"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "String slicing text[6:11] extracts characters from index 6 to 10 (11 is exclusive). In 'Hello World', index 6 starts at 'W' and goes to the end, giving 'World'.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 73,
+    "question": "What will this code print?\n\nfor i in range(2, 8, 2):\n    print(i, end=' ')",
+    "options": [
+      "2 4 6 ",
+      "2 4 6 8 ",
+      "0 2 4 6 ",
+      "2 3 4 5 6 7 "
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "range(2, 8, 2) starts at 2, stops before 8, with step 2. This generates 2, 4, 6.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 74,
+    "question": "What is the output of this nested loop?\n\nfor i in range(2):\n    for j in range(2):\n        print(f'{i}{j}', end=' ')",
+    "options": [
+      "00 01 10 11 ",
+      "01 10 ",
+      "00 11 ",
+      "0 1 0 1 "
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The outer loop runs twice (i=0,1) and for each i, the inner loop runs twice (j=0,1), producing all combinations: 00, 01, 10, 11.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 75,
+    "question": "What happens with this while loop?\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1",
+    "options": [
+      "Prints 0 1 2",
+      "Prints 1 2 3",
+      "Infinite loop",
+      "Prints 0 1 2 3"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The loop starts with i=0, prints i, then increments i. This continues while i < 3, so it prints 0, 1, 2 and then stops.",
+    "topic": "Control Flow"
+  },
+  {
+    "id": 76,
+    "question": "What is the output of this function?\n\ndef multiply(a, b=1):\n    return a * b\n\nresult = multiply(5)\nprint(result)",
+    "options": [
+      "5",
+      "1",
+      "0",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The function is called with only one argument (5), so a=5 and b uses its default value of 1. The result is 5 * 1 = 5.",
+    "topic": "Functions"
+  },
+  {
+    "id": 77,
+    "question": "What does this lambda function do?\n\nsquare = lambda x: x ** 2\nprint(square(4))",
+    "options": [
+      "Returns 8",
+      "Returns 16",
+      "Returns 4",
+      "Causes an error"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The lambda function squares its input. square(4) returns 4 ** 2 = 16.",
+    "topic": "Functions"
+  },
+  {
+    "id": 78,
+    "question": "Which of the following are valid ways to define a function with variable arguments? (Select all that apply)",
+    "options": [
+      "def func(*args):",
+      "def func(**kwargs):",
+      "def func(*args, **kwargs):",
+      "def func(args*)"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "*args collects positional arguments, **kwargs collects keyword arguments, and they can be used together. The syntax 'args*' is invalid.",
+    "topic": "Functions"
+  },
+  {
+    "id": 79,
+    "question": "What is the output of this code using a module alias?\n\nimport math as m\nprint(m.pi)",
+    "options": [
+      "3.141592653589793",
+      "pi",
+      "Error",
+      "math.pi"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The math module is imported with alias 'm', so m.pi accesses the pi constant from the math module, which is approximately 3.141592653589793.",
+    "topic": "Modules"
+  },
+  {
+    "id": 80,
+    "question": "What happens when you import a module multiple times in the same program?",
+    "options": [
+      "The module is loaded multiple times",
+      "Only the first import is executed",
+      "An error occurs",
+      "The module is reloaded each time"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Python caches imported modules, so subsequent imports of the same module don't reload it - only the first import actually loads and executes the module.",
+    "topic": "Modules"
+  },
+  {
+    "id": 81,
+    "question": "What is the correct way to handle multiple exception types?",
+    "options": [
+      "except ValueError, TypeError:",
+      "except (ValueError, TypeError):",
+      "except ValueError or TypeError:",
+      "except ValueError and TypeError:"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Multiple exception types should be grouped in a tuple: except (ValueError, TypeError). This catches either exception type.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 82,
+    "question": "What is the output of this exception handling code?\n\ntry:\n    result = 10 / 2\n    print('Success')\nexcept ZeroDivisionError:\n    print('Division by zero')\nelse:\n    print('No exception')\nfinally:\n    print('Cleanup')",
+    "options": [
+      "Success\nNo exception\nCleanup",
+      "Success\nCleanup",
+      "Division by zero\nCleanup",
+      "No exception\nCleanup"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "No exception occurs (10/2 is valid), so 'Success' prints, then the else block executes printing 'No exception', and finally the finally block prints 'Cleanup'.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 83,
+    "question": "What is the purpose of the __str__ method in a Python class?",
+    "options": [
+      "To convert the object to a string",
+      "To initialize the object",
+      "To compare two objects",
+      "To delete the object"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The __str__ method defines how an object should be represented as a string when using str() or print().",
+    "topic": "OOP"
+  },
+  {
+    "id": 84,
+    "question": "What is the output of this class inheritance example?\n\nclass Vehicle:\n    def __init__(self, brand):\n        self.brand = brand\n\nclass Car(Vehicle):\n    def __init__(self, brand, model):\n        super().__init__(brand)\n        self.model = model\n\nmy_car = Car('Toyota', 'Camry')\nprint(my_car.brand)",
+    "options": [
+      "Toyota",
+      "Camry",
+      "Vehicle",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The Car class calls super().__init__(brand) which initializes the brand attribute in the parent Vehicle class. So my_car.brand returns 'Toyota'.",
+    "topic": "OOP"
+  },
+  {
+    "id": 85,
+    "question": "Which of the following are characteristics of Python classes? (Select all that apply)",
+    "options": [
+      "Support encapsulation",
+      "Support inheritance",
+      "Support polymorphism",
+      "Are always abstract"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Python classes support encapsulation (data hiding), inheritance (extending classes), and polymorphism (same interface, different implementations). They are not always abstract.",
+    "topic": "OOP"
+  },
+  {
+    "id": 86,
+    "question": "What is the difference between a list and a tuple in Python?",
+    "options": [
+      "Lists are mutable, tuples are immutable",
+      "Lists are immutable, tuples are mutable",
+      "No difference",
+      "Lists are faster than tuples"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The main difference is that lists are mutable (can be changed after creation) while tuples are immutable (cannot be changed after creation).",
+    "topic": "Data Types"
+  },
+  {
+    "id": 87,
+    "question": "What is the output of this dictionary operation?\n\nmy_dict = {'a': 1, 'b': 2}\nmy_dict['c'] = 3\nprint(len(my_dict))",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "Error"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The dictionary starts with 2 key-value pairs, then a new pair 'c': 3 is added, making the total length 3.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 88,
+    "question": "What will this list comprehension produce?\n\nresult = [x * 2 for x in range(3)]\nprint(result)",
+    "options": [
+      "[0, 2, 4]",
+      "[2, 4, 6]",
+      "[0, 1, 2]",
+      "[1, 2, 3]"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "range(3) produces 0, 1, 2. The list comprehension multiplies each by 2, resulting in [0, 2, 4].",
+    "topic": "Data Types"
+  },
+  {
+    "id": 89,
+    "question": "What is the output of this set operation?\n\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\nprint(set1 & set2)",
+    "options": [
+      "{3}",
+      "{1, 2, 3, 4, 5}",
+      "{1, 2, 4, 5}",
+      "set()"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The & operator performs set intersection, returning elements common to both sets. Only 3 is in both set1 and set2.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 90,
+    "question": "What does this code demonstrate about Python's dynamic typing?\n\nx = 5\nprint(type(x))\nx = 'hello'\nprint(type(x))",
+    "options": [
+      "Variables can change type during runtime",
+      "This will cause an error",
+      "Both will print <class 'int'>",
+      "Both will print <class 'str'>"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Python is dynamically typed, meaning variables can be reassigned to different types during runtime. First x is an int, then it becomes a str.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 91,
+    "question": "The following expression 2 ** 3 ** 2 ** 1 is:",
+    "options": [
+      "A. invalid",
+      "B. equal to 16",
+      "C. equal to 16.0",
+      "D. equal to 512",
+      "E. equal to 64",
+      "F. equal to 128.0"
+    ],
+    "correctAnswers": [
+      3
+    ],
+    "explanation": "Python evaluates '**' operator from right to left. So, 2 ** 3 ** 2 ** 1 = 2 ** (3 ** (2 ** 1)) = 2 ** (3 ** 2) = 2 ** 9 = 512.",
+    "topic": "Operators"
+  },
+  {
+    "id": 92,
+    "question": "What does the ceil() function do in Python?",
+    "options": [
+      "A. Rounds a number down",
+      "B. Rounds a number up",
+      "C. Truncates the decimal part",
+      "D. Returns factorial"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The math.ceil() function rounds a number up to the nearest integer.",
+    "topic": "Math Module"
+  },
+  {
+    "id": 93,
+    "question": "What will math.floor(5.9) return?",
+    "options": [
+      "A. 5",
+      "B. 6",
+      "C. 5.9",
+      "D. 0"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "math.floor(5.9) returns 5 because it rounds the number down to the nearest integer.",
+    "topic": "Math Module"
+  },
+  {
+    "id": 94,
+    "question": "Which function removes the decimal part of a number?",
+    "options": [
+      "A. floor()",
+      "B. ceil()",
+      "C. trunc()",
+      "D. sqrt()"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "math.trunc() removes the decimal part and returns the integer portion.",
+    "topic": "Math Module"
+  },
+  {
+    "id": 95,
+    "question": "The factorial() function works on which type of number?",
+    "options": [
+      "A. Negative numbers",
+      "B. Floating-point numbers",
+      "C. Positive integers",
+      "D. Complex numbers"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "math.factorial() only works with positive integers including 0.",
+    "topic": "Math Module"
+  },
+  {
+    "id": 96,
+    "question": "What is math.hypot(3,4)?",
+    "options": [
+      "A. 5",
+      "B. 7",
+      "C. 4",
+      "D. 3"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "math.hypot(3,4) returns \u221a(3\u00b2 + 4\u00b2) = 5, which is the hypotenuse of the right triangle.",
+    "topic": "Math Module"
+  },
+  {
+    "id": 97,
+    "question": "What is the output of the following code?\n\nprint(''.join(['a', 'b', 'c']).upper())",
+    "options": [
+      "abc",
+      "ABC",
+      "['a','b','c']",
+      "None"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "The join() method merges list elements into a string, then upper() converts it to uppercase.",
+    "topic": "Strings"
+  },
+  {
+    "id": 98,
+    "question": "Which of the following correctly defines a class constructor in Python?",
+    "options": [
+      "def __start__():",
+      "def __create__(self):",
+      "def __init__(self):",
+      "def constructor(self):"
+    ],
+    "correctAnswers": [
+      2
+    ],
+    "explanation": "The constructor method in Python classes is always __init__.",
+    "topic": "Object Oriented Programming"
+  },
+  {
+    "id": 99,
+    "question": "What will be printed?\n\nx = lambda a, b: a * b\nprint(x(3, 4))",
+    "options": [
+      "7",
+      "12",
+      "1",
+      "Error"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "This lambda multiplies two arguments: 3 * 4 = 12.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 100,
+    "question": "Which of the following statements is used to handle exceptions in Python?",
+    "options": [
+      "try/except",
+      "do/catch",
+      "if/error",
+      "loop/catch"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Python uses try/except to catch and handle exceptions.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 101,
+    "question": "Which of the following imports a module with an alias?",
+    "options": [
+      "import math as m",
+      "module math import m",
+      "import math to m",
+      "from math as m"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`import math as m` imports the module and allows access with alias `m`.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 102,
+    "question": "What will this function return?\n\ndef foo():\n    pass\n\nprint(foo())",
+    "options": [
+      "None",
+      "foo",
+      "0",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Functions with no return statement return `None` by default.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 103,
+    "question": "Which of these best describes a class attribute in Python?",
+    "options": [
+      "It belongs to each instance",
+      "It is shared across all instances",
+      "It is a private method",
+      "It is a global variable"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "A class attribute is shared across all instances of the class.",
+    "topic": "Object Oriented Programming"
+  },
+  {
+    "id": 104,
+    "question": "What does this code print?\n\ns = 'Python'\nprint(s[::-1])",
+    "options": [
+      "nohtyP",
+      "Python",
+      "Error",
+      "Reverse"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "s[::-1] reverses the string using slicing.",
+    "topic": "Strings"
+  },
+  {
+    "id": 105,
+    "question": "What is the result of:\n\nprint(bool(0) or bool(''))",
+    "options": [
+      "True",
+      "False",
+      "None",
+      "0"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "`bool(0)` and `bool('')` are both False, so False or False is False.",
+    "topic": "Data Types"
+  },
+  {
+    "id": 106,
+    "question": "What exception does this raise?\n\nint('abc')",
+    "options": [
+      "ValueError",
+      "TypeError",
+      "SyntaxError",
+      "KeyError"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Cannot convert 'abc' to integer \u2014 this raises a ValueError.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 107,
+    "question": "Which of the following is a valid way to create a Python module?",
+    "options": [
+      "A file with .py extension containing functions and classes",
+      "A folder without __init__.py",
+      "A text file with .txt extension",
+      "A compiled C program"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "A Python module is any file with a .py extension containing Python code such as functions or classes.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 108,
+    "question": "Which exception is raised when trying to access a missing dictionary key?",
+    "options": [
+      "KeyError",
+      "IndexError",
+      "ValueError",
+      "TypeError"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Accessing a key that does not exist in a dictionary raises a KeyError.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 109,
+    "question": "What does the string method `strip()` do?",
+    "options": [
+      "Removes spaces from the start and end of the string",
+      "Removes all spaces in the string",
+      "Converts string to uppercase",
+      "Removes numbers from the string"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`strip()` removes leading and trailing whitespace from a string.",
+    "topic": "Strings"
+  },
+  {
+    "id": 110,
+    "question": "Which of the following correctly creates an instance of a class `Person`?",
+    "options": [
+      "p = Person()",
+      "p = new Person()",
+      "p = Person",
+      "p = Person.new()"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "In Python, you instantiate a class using `ClassName()`.",
+    "topic": "OOP"
+  },
+  {
+    "id": 111,
+    "question": "Which statement correctly defines a lambda function that multiplies two numbers?",
+    "options": [
+      "lambda x, y: x * y",
+      "def lambda(x, y): x * y",
+      "lambda multiply(x, y): return x * y",
+      "lambda x, y -> x * y"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "A lambda function is defined as `lambda arguments: expression`.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 112,
+    "question": "What will be the result of `bool('False')`?",
+    "options": [
+      "False",
+      "True",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [
+      1
+    ],
+    "explanation": "Any non-empty string in Python evaluates to True, even 'False'.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 113,
+    "question": "Which of the following is true about the `__name__` variable in Python?",
+    "options": [
+      "It is set to '__main__' when the module is run directly",
+      "It is always '__module__'",
+      "It is used to define classes",
+      "It stores the module's docstring"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`__name__` is set to '__main__' if the module is run directly, otherwise it is set to the module name.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 114,
+    "question": "What exception is raised when an operation is performed on an incompatible type?",
+    "options": [
+      "TypeError",
+      "ValueError",
+      "NameError",
+      "KeyError"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "TypeError is raised when an operation is applied to an object of inappropriate type.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 115,
+    "question": "What will `'abc123'.isalnum()` return?",
+    "options": [
+      "True",
+      "False",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`isalnum()` returns True if all characters are alphanumeric (letters or numbers) and the string is non-empty.",
+    "topic": "Strings"
+  },
+  {
+    "id": 116,
+    "question": "Which method is called automatically when an object is deleted?",
+    "options": [
+      "__del__",
+      "__init__",
+      "__new__",
+      "__str__"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`__del__` is called when an object is about to be destroyed.",
+    "topic": "OOP"
+  },
+  {
+    "id": 117,
+    "question": "What is the output of `[x**2 for x in range(3)]`?",
+    "options": [
+      "[0, 1, 4]",
+      "[1, 4, 9]",
+      "[0, 1, 2]",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "List comprehension `[x**2 for x in range(3)]` computes squares of 0,1,2 resulting in [0,1,4].",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 118,
+    "question": "Which statement correctly imports the `random` module?",
+    "options": [
+      "import random",
+      "from random import random",
+      "import random()",
+      "random import"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The correct syntax is simply `import random`.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 119,
+    "question": "Which exception occurs when a variable is referenced before assignment?",
+    "options": [
+      "NameError",
+      "TypeError",
+      "ValueError",
+      "KeyError"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Referencing a variable before assignment raises a NameError.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 120,
+    "question": "What does `'hello world'.title()` return?",
+    "options": [
+      "'Hello World'",
+      "'hello world'",
+      "'HELLO WORLD'",
+      "'Hello world'"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`title()` capitalizes the first letter of each word in the string.",
+    "topic": "Strings"
+  },
+  {
+    "id": 121,
+    "question": "What will be printed by the following code?\n\nclass A:\n    def __str__(self):\n        return 'Instance of A'\n\nprint(A())",
+    "options": [
+      "Instance of A",
+      "<__main__.A object at 0x...>",
+      "Error",
+      "None"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The __str__ method defines what is printed when an object is converted to a string or printed.",
+    "topic": "OOP"
+  },
+  {
+    "id": 122,
+    "question": "What is the output of `list(map(lambda x: x*2, [1,2,3]))`?",
+    "options": [
+      "[2, 4, 6]",
+      "[1, 4, 9]",
+      "[1, 2, 3]",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The map applies the lambda function to each element, doubling each number.",
+    "topic": "Miscellaneous"
+  },
+  {
+    "id": 123,
+    "question": "Which of the following is true about Python packages?",
+    "options": [
+      "Packages are directories containing modules and an __init__.py file",
+      "Packages are single .py files only",
+      "Packages cannot contain sub-packages",
+      "Packages must be imported using importlib only"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Python packages are directories with `__init__.py` and can contain modules and sub-packages.",
+    "topic": "Modules and Packages"
+  },
+  {
+    "id": 124,
+    "question": "Which exception is raised when performing an invalid arithmetic operation on incompatible types?",
+    "options": [
+      "TypeError",
+      "ValueError",
+      "NameError",
+      "KeyError"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "Invalid arithmetic operations between incompatible types raise TypeError.",
+    "topic": "Exceptions"
+  },
+  {
+    "id": 125,
+    "question": "What will `'Python programming'.split()` return?",
+    "options": [
+      "['Python', 'programming']",
+      "['Pythonprogramming']",
+      "['Python', '', 'programming']",
+      "Error"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "`split()` with no arguments splits the string at whitespace.",
+    "topic": "Strings"
+  },
+  {
+    "id": 126,
+    "question": "Which method is used to get the length of a list?",
+    "options": [
+      "len(list)",
+      "list.len()",
+      "list.length()",
+      "length(list)"
+    ],
+    "correctAnswers": [
+      0
+    ],
+    "explanation": "The built-in function `len()` returns the number of elements in a list.",
+    "topic": "Miscellaneous"
+  }
+]

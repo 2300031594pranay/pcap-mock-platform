@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import QuestionCard from "../components/QuestionCard";
 import PracticeSidebar from "../components/PractiseSidebar";
-import questionsData from "../data/questions.json";
+import questionsData from "../data/allquestions.json";
 import "./PracticeQuestions.css";
 
 interface Question {
@@ -16,7 +16,7 @@ interface Question {
 }
 
 export default function PracticeQuestions() {
-  const [questions] = useState<Question[]>(questionsData.slice(0, 86));
+  const [questions] = useState<Question[]>(questionsData.slice(0, 126));
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const [answeredQuestions, setAnsweredQuestions] = useState<Set<number>>(

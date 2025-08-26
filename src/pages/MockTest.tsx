@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import QuestionCard from "../components/QuestionCard"
 import ResultPage from "../components/ResultPage"
-import questionsData from "../data/mockquestion.json"
+import questionsData from "../data/allquestions.json"
 import "./MockTest.css"
 
 interface Question {
@@ -12,7 +12,7 @@ interface Question {
   options: string[]
   correctAnswers: number[]
   explanation: string
-  topic: string // Added so QuestionCard works
+  topic: string
 }
 
 interface UserAnswer {
@@ -76,10 +76,10 @@ export default function MockTest() {
     }
   }, [questions, userAnswers, timeLeft, currentQuestionIndex, answeredQuestions, testStarted, testCompleted])
 
-  // Function to select 40 random questions and add empty topic
+  // Function to select 40 random questions
   const getRandomQuestions = (): Question[] => {
     const shuffled = [...questionsData].sort(() => 0.5 - Math.random())
-    return shuffled.slice(0, 40).map(q => ({ ...q, topic: "" })) // add topic as empty string
+    return shuffled.slice(0, 40).map((q) => ({ ...q, topic: "" }))
   }
 
   // Start test with fresh questions
@@ -97,15 +97,13 @@ export default function MockTest() {
 
   const restartTest = () => startTest()
 
-  const handleAnswerSubmit = (questionId: number, selectedAnswers: number[]) => {
-    const question = questions.find((q) => q.id === questionId)
-    if (!question) return
-
-    const isCorrect =
-      selectedAnswers.length === question.correctAnswers.length &&
-      selectedAnswers.every((answer) => question.correctAnswers.includes(answer))
-
-    const newAnswer: UserAnswer = { questionId, selectedAnswers, isCorrect }
+  // ✅ Store only selected answers (no correctness check here)
+  const handleAnswerSubmit = (questionId: number, selectedAnswers: number[], _isCorrect: boolean) => { 
+    const newAnswer: UserAnswer = {
+      questionId,
+      selectedAnswers,
+      isCorrect: false, // placeholder, will be calculated later in ResultPage
+    }
 
     setUserAnswers((prev) => {
       const filtered = prev.filter((answer) => answer.questionId !== questionId)
@@ -116,8 +114,11 @@ export default function MockTest() {
   }
 
   const goToQuestion = (index: number) => setCurrentQuestionIndex(index)
-  const nextQuestion = () => setCurrentQuestionIndex((prev) => Math.min(prev + 1, questions.length - 1))
-  const prevQuestion = () => setCurrentQuestionIndex((prev) => Math.max(prev - 1, 0))
+  const nextQuestion = () =>
+    setCurrentQuestionIndex((prev) => Math.min(prev + 1, questions.length - 1))
+  const prevQuestion = () =>
+    setCurrentQuestionIndex((prev) => Math.max(prev - 1, 0))
+
   const submitTest = () => {
     setTestCompleted(true)
     localStorage.removeItem("pcap-progress")
@@ -129,10 +130,28 @@ export default function MockTest() {
     return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`
   }
 
+  // ✅ When test is finished → calculate correctness only here
   if (testCompleted) {
-    return <ResultPage questions={questions} userAnswers={userAnswers} onRestart={restartTest} />
+    const evaluatedAnswers: UserAnswer[] = userAnswers.map((ans) => {
+      const question = questions.find((q) => q.id === ans.questionId)
+      const isCorrect =
+        question &&
+        ans.selectedAnswers.length === question.correctAnswers.length &&
+        ans.selectedAnswers.every((a) => question.correctAnswers.includes(a))
+
+      return { ...ans, isCorrect: Boolean(isCorrect) }
+    })
+
+    return (
+      <ResultPage
+        questions={questions}
+        userAnswers={evaluatedAnswers}
+        onRestart={restartTest}
+      />
+    )
   }
 
+  // Start screen
   if (!testStarted) {
     return (
       <div className="mock-test-start">
@@ -157,6 +176,7 @@ export default function MockTest() {
     )
   }
 
+  // Test screen
   return (
     <div className="mock-test">
       <div className="test-container">
@@ -171,34 +191,37 @@ export default function MockTest() {
             </p>
           </div>
           <div className="timer">
-            <div className={`time-display ${timeLeft < 300 ? "warning" : ""}`}>{formatTime(timeLeft)}</div>
+            <div
+              className={`time-display ${timeLeft < 300 ? "warning" : ""}`}
+            >
+              {formatTime(timeLeft)}
+            </div>
             <p>Time Remaining</p>
           </div>
         </div>
 
-     <div className="question-navigation">
-  <div className="question-grid">
-    {questions.map((_, index) => {
-      const isCurrent = index === currentQuestionIndex;
-      const isAnswered = answeredQuestions.has(questions[index].id);
+        <div className="question-navigation">
+          <div className="question-grid">
+            {questions.map((_, index) => {
+              const isCurrent = index === currentQuestionIndex
+              const isAnswered = answeredQuestions.has(questions[index].id)
 
-      return (
-        <button
-          key={index}
-          className={`question-btn 
-            ${isCurrent ? "current" : ""} 
-            ${isAnswered ? "answered" : ""}`}
-          onClick={() => goToQuestion(index)}
-          title={`Question ${index + 1}
-            ${isAnswered ? " (Answered)" : ""}`}
-        >
-          {index + 1}
-        </button>
-      );
-    })}
-  </div>
-</div>
-
+              return (
+                <button
+                  key={index}
+                  className={`question-btn 
+                    ${isCurrent ? "current" : ""} 
+                    ${isAnswered ? "answered" : ""}`}
+                  onClick={() => goToQuestion(index)}
+                  title={`Question ${index + 1}
+                    ${isAnswered ? " (Answered)" : ""}`}
+                >
+                  {index + 1}
+                </button>
+              )
+            })}
+          </div>
+        </div>
 
         <div className="question-section">
           <QuestionCard
@@ -206,12 +229,18 @@ export default function MockTest() {
             questionNumber={currentQuestionIndex + 1}
             totalQuestions={questions.length}
             onAnswerSubmit={handleAnswerSubmit}
-            showExplanation={false}
-            userAnswer={userAnswers.find((a) => a.questionId === questions[currentQuestionIndex].id)}
+            showExplanation={false} // ✅ no explanation during test
+            userAnswer={userAnswers.find(
+              (a) => a.questionId === questions[currentQuestionIndex].id
+            )}
           />
 
           <div className="test-navigation">
-            <button className="btn btn-secondary" onClick={prevQuestion} disabled={currentQuestionIndex === 0}>
+            <button
+              className="btn btn-secondary"
+              onClick={prevQuestion}
+              disabled={currentQuestionIndex === 0}
+            >
               Previous
             </button>
 
