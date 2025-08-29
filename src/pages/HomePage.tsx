@@ -1,7 +1,11 @@
 import "./HomePage.css"
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import TermsModal from "./../components/TermsModal"
 
 export default function HomePage() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <div className="homepage">
       {/* HERO SECTION */}
@@ -12,6 +16,23 @@ export default function HomePage() {
             Practice real questions from previous years and get ready to ace
             the PCAP (Python Certified Associate Programmer) exam!
           </p>
+
+          {/* Terms & Conditions statement */}
+          <p className="terms-statement">
+            By starting, you agree to our{" "}
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault()
+                setShowModal(true)
+              }}
+              className="terms-link"
+            >
+              Terms & Conditions
+            </a>
+            .
+          </p>
+
           <Link to="/practice" className="btn primary">
             Start Practicing
           </Link>
@@ -69,6 +90,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Terms Modal */}
+      {showModal && (
+        <TermsModal isOpen={true} onClose={() => setShowModal(false)} />
+      )}
     </div>
   )
 }

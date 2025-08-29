@@ -28,7 +28,7 @@ interface QuestionCardProps {
     selectedAnswers: number[],
     isCorrect: boolean
   ) => void
-  showExplanation?: boolean
+  showExplanation?: boolean // true = Practice mode, false = Mock test mode
   userAnswer?: UserAnswer
 }
 
@@ -43,26 +43,22 @@ export default function QuestionCard({
 }: QuestionCardProps) {
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([])
   const [hasAnswered, setHasAnswered] = useState(false)
-  const [showResult, setShowResult] = useState(false)
 
   // ✅ Reset state whenever question changes or external saved answer is provided
   useEffect(() => {
     if (userAnswer) {
       setSelectedAnswers(userAnswer.selectedAnswers)
       setHasAnswered(true)
-      // Always show result if we have a stored answer
-      setShowResult(true)
     } else {
       setSelectedAnswers([])
       setHasAnswered(false)
-      setShowResult(false)
     }
   }, [question.id, userAnswer])
 
   // ✅ Option select handler
   const handleOptionSelect = (optionIndex: number) => {
-    // Block changing answers AFTER submission
-    if (hasAnswered) return
+    // Block changing answers AFTER submission (only in practice/review mode)
+    if (hasAnswered && showExplanation) return
 
     if (question.correctAnswers.length === 1) {
       // Single choice
@@ -90,29 +86,37 @@ export default function QuestionCard({
     if (selectedAnswers.length === 0) return
 
     setHasAnswered(true)
-    const correct = isAnswerCorrect()
+
+    // 👉 In practice mode: check correctness immediately
+    // 👉 In mock test mode: always send `false` (result calculated later)
+    const correct = showExplanation ? isAnswerCorrect() : false
 
     // Notify parent
     onAnswered?.(question.id)
     onAnswerSubmit?.(question.id, selectedAnswers, correct)
-
-    setShowResult(true) // Always show result after submission
   }
 
   // ✅ Dynamic option CSS
   const getOptionClass = (index: number) => {
-    if (!hasAnswered || !showResult) {
-      return selectedAnswers.includes(index) ? "selected" : ""
-    }
+  if (!showExplanation) {
+    // Mock/exam mode → only highlight chosen option
+    return selectedAnswers.includes(index) ? "selected" : ""
+  }
 
+  // Practice mode → correctness only after submit
+  if (hasAnswered) {
     if (question.correctAnswers.includes(index)) {
       return "correct"
     }
     if (selectedAnswers.includes(index) && !question.correctAnswers.includes(index)) {
       return "incorrect"
     }
-    return ""
   }
+
+  return selectedAnswers.includes(index) ? "selected" : ""
+}
+
+
 
   return (
     <div className="question-card">
@@ -159,19 +163,17 @@ export default function QuestionCard({
         ))}
       </div>
 
-      {/* Submit button */}
+      {/* Submit button (only in exam mode, before answer is locked) */}
       {!hasAnswered && (
-        <button
-          className="submit-btn"
-          onClick={handleSubmit}
-          disabled={selectedAnswers.length === 0}
-        >
-          Submit Answer
-        </button>
-      )}
+  <button className="submit-btn" onClick={handleSubmit}>
+    Submit
+  </button>
+)}
 
-      {/* Results + Explanation */}
-      {hasAnswered && showResult && (
+
+
+      {/* Results + Explanation (only in practice/review mode) */}
+      {hasAnswered && showExplanation && (
         <div className="result-section">
           <div
             className={`result-indicator ${
@@ -180,12 +182,10 @@ export default function QuestionCard({
           >
             {isAnswerCorrect() ? "✓ Correct!" : "✗ Incorrect"}
           </div>
-          {showExplanation && (
-            <div className="explanation">
-              <h4>Explanation:</h4>
-              <p>{question.explanation}</p>
-            </div>
-          )}
+          <div className="explanation">
+            <h4>Explanation:</h4>
+            <p>{question.explanation}</p>
+          </div>
         </div>
       )}
     </div>
